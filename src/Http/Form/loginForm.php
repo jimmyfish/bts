@@ -36,19 +36,26 @@ class loginForm extends AbstractType
             'username',
             'text',
             [
-
+                'constraints' => new Assert\NotBlank(),
+                'label' => false,
+                'attr' =>['class'=>'form-control','placeholder'=>'Input Username','required'=>'required'],
+                'label_attr'=> ['class'=>'field-label']
             ]
         )->add(
             'password',
             'password',
             [
-
+                'constraints' => new Assert\NotBlank(),
+                'label' => false,
+                'attr' => ['class'=>'form-control','placeholder'=>'Input Password','required'=>'required'],
+                'label_attr'=> ['class'=>'field-label']
             ]
         )->add(
             'kirim',
             'submit',
             [
-
+                'attr' => ['class' => 'btn btn-primary btn-block btn-flat'],
+                'label' => 'Sign In'
             ]
         );
 

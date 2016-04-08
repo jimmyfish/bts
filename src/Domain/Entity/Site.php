@@ -106,9 +106,15 @@ class Site
      * @Column(type="string",length=255,nullable=false)
      * @var string
      */
-    private $subconf;
+    private $subcont;
 
-    public static function create($regional,$poc,$prodef,$siteId,$siteName,$towerOwner,$address,$fop,$longitude,$latitude,$existingSystem,$remark,$stats,$subconf)
+    /**
+     * @Column(type="string", length=255, nullable=false)
+     * @var string
+     */
+    private $spv;
+
+    public static function create($regional,$poc,$prodef,$siteId,$siteName,$towerOwner,$address,$fop,$spv,$longitude,$latitude,$existingSystem,$remark,$stats,$subcont)
     {
         $siteInfo = new Site();
         $siteInfo->setRegional($regional);
@@ -124,7 +130,7 @@ class Site
         $siteInfo->setExistingSystem($existingSystem);
         $siteInfo->setRemark($remark);
         $siteInfo->setStats($stats);
-        $siteInfo->setSubconf($subconf);
+        $siteInfo->setsubcont($subcont);
     }
 
     public function getId()
@@ -267,14 +273,24 @@ class Site
         $this->stats = $stats;
     }
 
-    public function getSubconf()
+    public function getSubcont()
     {
-        return $this->subconf;
+        return $this->subcont;
     }
 
-    public function setSubconf($subconf)
+    public function setSubcont($subcont)
     {
-        $this->subconf = $subconf;
+        $this->subcont = $subcont;
+    }
+
+    public function getSpv()
+    {
+        return $this->spv;
+    }
+
+    public function setSpv($spv)
+    {
+        $this->spv = $spv;
     }
 
 

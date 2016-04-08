@@ -3,3 +3,4 @@ app/cache/
 app/logs/
 app/config.php
 public/photo/
+.idea/

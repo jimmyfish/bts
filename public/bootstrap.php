@@ -72,3 +72,7 @@ if ($app['debug']) {
 $app['user.repository'] = function () use ($app) {
     return $app['orm.em']->getRepository(\Yanna\bts\Domain\Entity\User::class);
 };
+
+$app['site.repository'] = function () use ($app) {
+    return $app['orm.em']->getRepository(\Yanna\bts\Domain\Entity\Site::class);
+};

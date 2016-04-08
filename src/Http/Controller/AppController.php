@@ -13,17 +13,21 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Silex\Application;
 use Silex\ControllerCollection;
 use Silex\ControllerProviderInterface;
+use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
+use Yanna\bts\Domain\Entity\Site;
 use Yanna\bts\Http\Form\loginForm;
 use Yanna\bts\Domain\Entity\User;
 //use Yanna\bts\Http\Form\UserForm;
 use Yanna\bts\Domain\Services\userPasswordMatcher;
 //use Yanna\bts\Domain\Services\UserServices;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Form;
 
 class AppController implements ControllerProviderInterface
 {
-private $app;
+    private $app;
 
     public function __construct(Application $app)
     {
@@ -35,6 +39,7 @@ private $app;
         $controller = $app['controllers_factory'];
 
         $controller->get('/home', [$this, 'homeAction'])
+            ->before([$this, 'checkUserRole'])
             ->bind('home');
 
         $controller->get('/createRawUser', [$this, 'createRawUserAction'])
@@ -47,7 +52,44 @@ private $app;
             ->before([$this, 'checkUserRole'])
             ->bind('loginAdmin');
 
+        $controller->match('/siteSelect', [$this, 'selectSiteAction'])
+//            ->before([$this, 'checkUserEngineer'])
+            ->bind('siteSelect');
+
         return $controller;
+    }
+
+    public function selectSiteAction(Request $request)
+    {
+        $infoSite = new Site();
+        $infoAll = $this->app['site.repository']->findAll();
+//        $form = $this->app['form.factory']->createBuilder('form', $infoSite)
+//            ->add(
+//                'siteId',
+//                ChoiceType::class,
+//                [
+//                    'choices' => [$infoAll['siteId'],[$infoAll['siteName']]]
+//                ]
+//            )->add('save', 'submit')
+//            ->getForm();
+
+
+//        $infoSiteId = $infoSite->getSiteId();
+
+//        return $this->app['twig']->render('Engineer/siteSelect.twig',['form' => $form->createView()]);
+        return var_dump($infoSite);
+
+    }
+
+    public function checkUserEngineer(Request $request)
+    {
+        if ($request->getPathInfo() === '/siteSelect' && $this->app['session']->has('uname')) {
+            return $this->app->redirect($this->app['url_generator']->generate('home'));
+        }
+
+        if (! ($this->app['session']->get('role') == 3) && ! ($request->getPathInfo() === '/siteSelect')) {
+            return $this->app->redirect($this->app['url_generator']->generate('home'));
+        }
     }
 
     public function checkUserRole(Request $request)
@@ -72,7 +114,7 @@ private $app;
 
     public function createRawUserAction()
     {
-        $informasi = User::create('dito','ditolaksono','faster',0);
+        $informasi = User::create('dito yp','ditoyp','faster',3);
 
         $this->app['orm.em']->persist($informasi);
         $this->app['orm.em']->flush($informasi);
@@ -116,6 +158,7 @@ private $app;
 
         $this->app['session']->set('role', ['value' => $user->getRole()]);
         $this->app['session']->set('uname', ['value' => $user->getUsername()]);
+        $this->app['session']->set('name', ['value' => $user->getName()]);
         $this->app['session']->set('uid', ['value' => $user->getId()]);
 
         return $this->app->redirect($this->app['url_generator']->generate('home'));

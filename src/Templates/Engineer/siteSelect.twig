@@ -1,0 +1,17 @@
+{% extends 'layouts/head.twig' %}
+
+{% block content %}
+
+    {{ dump(infoSite) }}
+    {#{{ form_start(form, {'method':'post','action': 'siteSelect'}) }}#}
+    {#<select>#}
+{#{% for info in infoSite %}#}
+    {#&#123;&#35;{{ info.siteId }}&#35;&#125;#}
+
+        {#<option value="{{ info.siteId }}">{{ info.siteName }}</option>#}
+
+{#{% endfor %}#}
+{#</select>#}
+
+    {#{{ form_end(form) }}#}
+{% endblock %}

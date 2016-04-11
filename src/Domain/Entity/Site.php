@@ -125,6 +125,7 @@ class Site
         $siteInfo->setTowerOwner($towerOwner);
         $siteInfo->setAddress($address);
         $siteInfo->setFop($fop);
+        $siteInfo->setSpv($spv);
         $siteInfo->setLongitude($longitude);
         $siteInfo->setLatitude($latitude);
         $siteInfo->setExistingSystem($existingSystem);

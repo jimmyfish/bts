@@ -10,7 +10,6 @@ namespace Yanna\bts\Http\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Yanna\bts\Domain\Entity\User;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class loginForm extends AbstractType

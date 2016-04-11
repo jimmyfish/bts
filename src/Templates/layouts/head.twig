@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>KePASAR - Administrator</title>
+    <title>BTS control system - Administrator</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -38,9 +38,9 @@
         <!-- Logo -->
         <a href="{{ ('/home') }}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>P</b>SR</span>
+            <span class="logo-mini"><b>P</b>BTS</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Ke</b>Pasar</span>
+            <span class="logo-lg">Control System</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -123,30 +123,27 @@
                 {% if ((app.session.get('role')['value']) < 2) %}
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-shopping-cart"></i> <span>Lapak</span> <i class="fa fa-angle-left pull-right"></i>
+                            <i class="fa fa-shopping-cart"></i> <span>User Management</span> <i class="fa fa-angle-left pull-right"></i>
                         </a>
 
                         <ul class="treeview-menu">
-                            <li><a href="{{ ('/listLapak') }}"><i class="fa fa-circle-o"></i> List Lapak</a></li>
+                            <li><a href="{{ ('/newUser') }}"><i class="fa fa-circle-o"></i> Add User </a></li>
                             {#<li><a href=""><i class="fa fa-circle-o"></i> Lapak Baru</a></li>#}
+                            <li><a href="{{ ('/listUser') }}"><i class="fa fa-circle-o"></i>List User</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-tags"></i> <span>Merk (Branding)</span> <i class="fa fa-angle-left pull-right"></i>
+                            <i class="fa fa-tags"></i> <span>Site Management</span> <i class="fa fa-angle-left pull-right"></i>
                         </a>
 
                         <ul class="treeview-menu">
-                            <li><a href="{{ ('/listMerk') }}"><i class="fa fa-circle-o"></i> List Merk</a></li>
+                            <li><a href="{{ ('/newSite') }}"><i class="fa fa-circle-o"></i> Add Site</a></li>
                             {#<li><a href=""><i class="fa fa-circle-o"></i> Merk Baru</a></li>#}
+                            <li><a href="{{ ('/listSite') }}"><i class="fa fa-circle-o"></i>List Site</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="{{ ('/listPasar') }}">
-                            <i class="fa fa-balance-scale"></i>
-                            <span>Pasar</span>
-                        </a>
-                    </li>
+
                 {% else %}
                     <li>
                         <a href="{{ ('/listProdukPelapak') }}">

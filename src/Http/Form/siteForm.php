@@ -11,7 +11,7 @@ namespace Yanna\bts\Http\Form;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\AbstractType;
-use Yanna\bts\Domain\Entity\Site;
+
 
 class siteForm extends AbstractType
 {
@@ -41,7 +41,9 @@ class siteForm extends AbstractType
 
     private $stats;
 
-    private $subconf;
+    private $subcont;
+
+    private $spv;
 
     public function buildForm(FormBuilderInterface $builder,array $options)
     {
@@ -123,6 +125,15 @@ class siteForm extends AbstractType
             ]
 
         )->add(
+            'spv',
+            'text',
+            [
+                'constraints'=>new Assert\NotBlank(),
+                'label' => false,
+                'attr' => ['class'=>'form-control','placeholder'=>'Input spv','required'=>'required'],
+                'label_attr'=> ['class'=>'field-label']
+            ]
+        )->add(
             'longitude',
             'text',
             [
@@ -173,12 +184,12 @@ class siteForm extends AbstractType
             ]
 
         )->add(
-            'subconf',
+            'subcont',
             'text',
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input subconf','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input subcont','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
 
@@ -275,6 +286,76 @@ class siteForm extends AbstractType
     public function setFop($fop)
     {
         $this->fop =$fop;
+    }
+
+    public function getSpv()
+    {
+        return $this->spv;
+    }
+
+    public function setSpv($spv)
+    {
+        $this->spv = $spv;
+    }
+
+    public function getLongitude()
+    {
+        return $this->longitude;
+    }
+
+    public function setLongitude($longitude)
+    {
+        $this->longitude = $longitude;
+    }
+
+    public function getLatitude()
+    {
+        return $this->latitude;
+    }
+
+    public function setLatitude($latitude)
+    {
+        $this->latitude = $latitude;
+    }
+
+    public function getExistingSystem()
+    {
+        return $this->existingSystem;
+    }
+
+    public function setExistingSystem($existingSystem)
+    {
+        $this->existingSystem = $existingSystem;
+    }
+
+    public function getRemark()
+    {
+        return $this->remark;
+    }
+
+    public function setRemark($remark)
+    {
+        $this->remark = $remark;
+    }
+
+    public function getStats()
+    {
+        return $this->stats;
+    }
+
+    public function setStats($stats)
+    {
+        $this->stats = $stats;
+    }
+
+    public function getSubcont()
+    {
+        return $this->subcont;
+    }
+
+    public function setSubcont($subcont)
+    {
+        $this->subcont = $subcont;
     }
 
 }

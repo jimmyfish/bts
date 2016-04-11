@@ -132,23 +132,23 @@
                             <li><a href="{{ ('/listUser') }}"><i class="fa fa-circle-o"></i>List User</a></li>
                         </ul>
                     </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-tags"></i> <span>Site Management</span> <i class="fa fa-angle-left pull-right"></i>
-                        </a>
+                    {#<li class="treeview">#}
+                        {#<a href="#">#}
+                            {#<i class="fa fa-tags"></i> <span>Site Management</span> <i class="fa fa-angle-left pull-right"></i>#}
+                        {#</a>#}
 
-                        <ul class="treeview-menu">
-                            <li><a href="{{ ('/newSite') }}"><i class="fa fa-circle-o"></i> Add Site</a></li>
-                            {#<li><a href=""><i class="fa fa-circle-o"></i> Merk Baru</a></li>#}
-                            <li><a href="{{ ('/listSite') }}"><i class="fa fa-circle-o"></i>List Site</a></li>
-                        </ul>
-                    </li>
+                        {#<ul class="treeview-menu">#}
+                            {#<li><a href="{{ ('/newSite') }}"><i class="fa fa-circle-o"></i> Add Site</a></li>#}
+                            {#&#123;&#35;<li><a href=""><i class="fa fa-circle-o"></i> Merk Baru</a></li>&#35;&#125;#}
+                            {#<li><a href="{{ ('/listSite') }}"><i class="fa fa-circle-o"></i>List Site</a></li>#}
+                        {#</ul>#}
+                    {#</li>#}
 
                 {% else %}
                     <li>
-                        <a href="{{ ('/listProdukPelapak') }}">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span>List Produk</span>
+                        <a href="#">
+                            {#<i class="fa fa-shopping-cart"></i>#}
+                            {#<span>List Produk</span>#}
                         </a>
                     </li>
                 {% endif %}

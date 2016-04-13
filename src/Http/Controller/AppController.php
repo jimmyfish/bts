@@ -22,6 +22,7 @@ use Yanna\bts\Domain\Services\userPasswordMatcher;
 //use Yanna\bts\Domain\Services\UserServices;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Yanna\bts\Http\Form\siteForm;
+use Yanna\bts\Http\Form\selectSiteForm;
 use Yanna\bts\Http\Form\userForm;
 
 class AppController implements ControllerProviderInterface
@@ -80,23 +81,24 @@ class AppController implements ControllerProviderInterface
 
     public function selectSiteAction(Request $request)
     {
-        $infoSite = new Site();
+        $selectSiteForm = new selectSiteForm();
+        $form = $this->app['form.factory']->create($selectSiteForm, $selectSiteForm);
+
         $infoAll = $this->app['site.repository']->findAll();
-//        $form = $this->app['form.factory']->createBuilder('form', $infoSite)
-//            ->add(
-//                'siteId',
-//                ChoiceType::class,
-//                [
-//                    'choices' => [$infoAll['siteId'],[$infoAll['siteName']]]
-//                ]
-//            )->add('save', 'submit')
-//            ->getForm();
 
+        if ($request->getMethod() === 'GET') {
+            return $this->app['twig']->render('Engineer/siteSelect.twig',['form' => $form->createView(), 'infoSite' => $infoAll]);
+        }
 
-//        $infoSiteId = $infoSite->getSiteId();
+        $form->handleRequest($request);
 
-//        return $this->app['twig']->render('Engineer/siteSelect.twig',['form' => $form->createView()]);
-        return var_dump($infoSite);
+        if (! $form->isValid()) {
+            return $this->app['twig']->render('Engineer/siteSelect.twig',['form' => $form->createView(), 'infoSite' => $infoAll]);
+        }
+
+        $this->app['session']->set('site', ['value' => $selectSiteForm->getSiteId()]);
+
+//        return var_dump($infoSite);
 
     }
 
@@ -133,7 +135,7 @@ class AppController implements ControllerProviderInterface
 
     public function createRawUserAction()
     {
-        $informasi = User::create('dito yp','ditoyp','faster',3);
+        $informasi = User::create('yanna','yanna','faster',3);
 
         $this->app['orm.em']->persist($informasi);
         $this->app['orm.em']->flush($informasi);

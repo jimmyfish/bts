@@ -13,7 +13,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Yanna\bts\Domain\Entity\Site;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 class selectSiteForm extends AbstractType
 {
 
@@ -27,11 +27,14 @@ class selectSiteForm extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
+        $site = new Site();
       $builder->add(
           'siteId',
-          'entity',
-          array('class'=>'Yannabts:sites','property'=>'siteName','expanded'=>false,'multiple'=>false)
+          EntityType::class,
+          [
+              'class' => 'Yanna\bts\Domain\Entity\Site',
+              'choices' => $site->getSiteId()
+          ]
       )->add(
           'kirim',
           'submit',

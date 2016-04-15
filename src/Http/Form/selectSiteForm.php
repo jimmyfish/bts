@@ -28,21 +28,21 @@ class selectSiteForm extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $site = new Site();
-      $builder->add(
-          'siteId',
-          EntityType::class,
-          [
-              'class' => 'Yanna\bts\Domain\Entity\Site',
-              'choices' => $site->getSiteId()
-          ]
-      )->add(
-          'kirim',
-          'submit',
-          [
-              'attr' => ['class' => 'btn btn-primary btn-block btn-flat'],
-              'label' => 'submit'
-          ]
-      );
+        $builder->add(
+            'siteId',
+            EntityType::class,
+            [
+                'class' => 'yanna:site',
+                'choices' => $site->getSiteId()
+            ]
+        )->add(
+            'kirim',
+            'submit',
+            [
+                'attr' => ['class' => 'btn btn-primary btn-block btn-flat'],
+                'label' => 'submit'
+            ]
+        );
 
     }
 

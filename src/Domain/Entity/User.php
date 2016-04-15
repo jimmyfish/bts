@@ -147,6 +147,14 @@ class User
     }
 
     /**
+     * @param $password
+     */
+    public function setPasswordNonHash($password)
+    {
+        $this->password = $password;
+    }
+
+    /**
      * @return int
      */
     public function getRole()

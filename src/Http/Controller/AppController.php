@@ -237,9 +237,9 @@ class AppController implements ControllerProviderInterface
     public function showAllUser()
     {
         $user = $this->app['user.repository']->findAll();
-        $infoUser = $this->app['session']->get('role');
+//        $infoUser = $this->app['session']->get('role');
 
-        return $this->app['twig']->render('listUser.twig',['userList'=>$user,'infoUser'=>$infoUser]);
+        return $this->app['twig']->render('listUser.twig',['userList'=>$user]);
     }
 
     public function deleteUserAction()

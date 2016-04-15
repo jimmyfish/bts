@@ -34,7 +34,7 @@ class userForm extends AbstractType
             [
                 'constraints' => new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input Name'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Full Name','required'=>'required'],
                 'label_attr' => ['class'=>'field-label']
             ]
         )->add(

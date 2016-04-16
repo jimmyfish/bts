@@ -9,8 +9,8 @@
                     <div class="col-md-12">
                         <div class="f-center">
                             <i class="imoon-3x imoon imoon-user3"></i>
-                            <h1> List User</h1>
-                            <p>Manage and Modify user account</p>
+                            <h1> List Site</h1>
+                            <p>Manage and Modify site account</p>
                         </div>
                         {% for message in app.session.getFlashBag.get('message_success') %}
                             <div class="alert alert-success alert-dismissable">
@@ -25,16 +25,28 @@
 
                                 <div class="panel-body pn">
                                     {% if ((app.session.get('role')['value']) == 0) %}
-                                        <a href="{{ ('/newUser') }}" class="btn btn-primary" style="margin:0 0 15px 5px;"><i class="glyphicons glyphicons-user_add"></i> &nbsp;New User</a>
+                                        <a href="{{ ('/newSite') }}" class="btn btn-primary" style="margin:0 0 15px 5px;"><i class="glyphicons glyphicons-user_add"></i> &nbsp;New Site</a>
                                     {% endif %}
                                     <table class="table table-striped table-hover table-bordered" id="datatable2" cellspacing="0" width="100%">
 
                                         <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>Full Name</th>
-                                            <th>Username</th>
-                                            <th>Role</th>
+                                            <th>Region</th>
+                                            <th>Poc</th>
+                                            <th>Prodef</th>
+                                            <th>site_id</th>
+                                            <th>site_name</th>
+                                            <th>Tower_owner</th>
+                                            <th>Address</th>
+                                            <th>Fop</th>
+                                            <th>Spv</th>
+                                            <th>Longitude</th>
+                                            <th>Latitude</th>
+                                            <th>Existing_System</th>
+                                            <th>Remark</th>
+                                            <th>Stats</th>
+                                            <th>Subcont</th>
                                             <th>Created Date</th>
 
                                             {% if ((app.session.get('role')['value']) == 0) %}
@@ -44,24 +56,28 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        {% if (userList|length > 0)%}
+                                        {% if (siteList|length > 0)%}
                                         {% set i = 1 %}
-                                        {% for list in userList %}
+                                        {% for list in siteList %}
 
                                             <tr>
                                                 <td>{{ i }}</td>
-                                                <td style="text-transform: capitalize">{{ list.name }}</td>
-                                                <td>{{ list.username }}</td>
-                                                {% if (list.role == 0)%}
-                                                    <td>Owner</td>
-                                                {% elseif (list.role == 1) %}
-                                                    <td>Vendor</td>
-                                                {% elseif (list.role == 2) %}
-                                                    <td>Documentation</td>
-                                                {% else %}
-                                                    <td>Engineer</td>
-                                                {% endif %}
-                                                <td>{{ list.createdAt|date('d M Y') }}</td>
+                                                <td>{{ list.regional }}</td>
+                                                <td>{{ list.poc }}</td>
+                                                <td>{{ list.prodef }}</td>
+                                                <td>{{ list.siteId }}</td>
+                                                <td>{{ list.siteName }}</td>
+                                                <td>{{ list.towerOwner }}</td>
+                                                <td>{{ list.address }}</td>
+                                                <td>{{ list.fop }}</td>
+                                                <td>{{ list.spv }}</td>
+                                                <td>{{ list.longitude }}</td>
+                                                <td>{{ list.latitude }}</td>
+                                                <td>{{ list.existingSystem }}</td>
+                                                <td>{{ list.remark }}</td>
+                                                <td>{{ list.stats }}</td>
+                                                <td>{{ list.subcont }}</td>
+                                                
 
                                                 {% if (app.session.get('role')['value'] == 0) %}
                                                     <td>
@@ -84,7 +100,7 @@
                                         {% else %}
                                             <tbody>
                                             <tr>
-                                                <td colspan="10" style="text-align: center" class="primary">Tidak ada User</td>
+                                                <td colspan="10" style="text-align: center" class="primary">Tidak ada site</td>
                                             </tr>
                                             </tbody>
                                         {% endif %}

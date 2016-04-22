@@ -62,7 +62,7 @@ class userForm extends AbstractType
             [
                 'constraints' => new Assert\NotBlank(),
                 'choice_list' => new ChoiceList(
-                    ['0','1','2','3'],['0','1','2','3']
+                    ['0','1','2','3'],['0 - Owner','1 - Vendor','2 - Documentation','3 - Engineer']
                 ),
                 'placeholder' => 'Choose Role',
                 'empty_data' => '0',
@@ -76,7 +76,7 @@ class userForm extends AbstractType
             'submit',
             [
                 'attr' => ['class' => 'btn btn-primary btn-block btn-flat'],
-                'label' => 'Sign In'
+                'label' => 'Eksekusi'
             ]
         );
     }

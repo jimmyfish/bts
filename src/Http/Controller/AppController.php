@@ -181,6 +181,7 @@ class AppController implements ControllerProviderInterface
         $this->app['session']->set('uname', ['value' => $user->getUsername()]);
         $this->app['session']->set('name', ['value' => $user->getName()]);
         $this->app['session']->set('uid', ['value' => $user->getId()]);
+        $this->app['session']->set('created', ['value' => $user->getCreatedAt()]);
 
         return $this->app->redirect($this->app['url_generator']->generate('home'));
     }

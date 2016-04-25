@@ -3,7 +3,7 @@ BTS Control System
 
 Licensed MIT to Komaltechno Inc.
 
-PHP 7.0-9
+PHP 7.0
 ---
 
 ```bash

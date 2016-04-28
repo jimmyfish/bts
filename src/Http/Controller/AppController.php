@@ -102,6 +102,9 @@ class AppController implements ControllerProviderInterface
         $controller->get('/handoverTestBetween',[$this,'handoverTestBetweenAction'])
             ->bind('handoverTestBetween');
 
+        $controller->get('/siteDocumentation',[$this,'siteDocumentationAction'])
+            ->bind('siteDocumentation');
+
 
         return $controller;
     }
@@ -362,6 +365,11 @@ class AppController implements ControllerProviderInterface
     public function handoverTestBetweenAction()
     {
         return $this->app['twig']->render('Vd/handoverTestBettweenForm.twig');
+    }
+
+    public function siteDocumentationAction()
+    {
+        return $this->app['twig']->render('Documentation/siteDocumentation.twig');
     }
 
 }

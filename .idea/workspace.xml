@@ -41,8 +41,8 @@
       <file leaf-file-name="AppController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Http/Controller/AppController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-133.46153" vertical-offset="2191" max-vertical-offset="6239">
-              <caret line="338" column="45" selection-start-line="338" selection-start-column="45" selection-end-line="338" selection-end-column="45" />
+            <state vertical-scroll-proportion="-18.384615" vertical-offset="5744" max-vertical-offset="6375">
+              <caret line="371" column="79" selection-start-line="371" selection-start-column="79" selection-end-line="371" selection-end-column="79" />
               <folding>
                 <element signature="e#125#173#0#PHP" expanded="true" />
               </folding>
@@ -50,22 +50,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="environtmentMonitoringForm.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Templates/environtmentMonitoringForm.twig">
+      <file leaf-file-name="head.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Templates/layouts/head.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4299" max-vertical-offset="4845">
-              <caret line="270" column="85" selection-start-line="270" selection-start-column="85" selection-end-line="270" selection-end-column="85" />
+            <state vertical-scroll-proportion="-16.423077" vertical-offset="1851" max-vertical-offset="3961">
+              <caret line="134" column="60" selection-start-line="134" selection-start-column="60" selection-end-line="134" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="head.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Templates/layouts/head.twig">
+      <file leaf-file-name="siteDocumentation.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Templates/Documentation/siteDocumentation.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.93772894" vertical-offset="2293" max-vertical-offset="3910">
-              <caret line="165" column="33" selection-start-line="165" selection-start-column="33" selection-end-line="165" selection-end-column="33" />
-              <folding />
+            <state vertical-scroll-proportion="0.4047619" vertical-offset="51" max-vertical-offset="2686">
+              <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
+              <folding>
+                <element signature="e#802#829#0#HTML" expanded="true" />
+                <element signature="e#877#904#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,8 +86,8 @@
       <file leaf-file-name="basicServicesForm.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Templates/Vd/basicServicesForm.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385" vertical-offset="1411" max-vertical-offset="1972">
-              <caret line="100" column="36" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
+            <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="1972">
+              <caret line="9" column="132" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="132" />
               <folding />
             </state>
           </provider>
@@ -138,7 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Domain/Repository/DoctrineUserRepository.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/config.php.dist" />
         <option value="$PROJECT_DIR$/src/Domain/Services/userPasswordMatcher.php" />
@@ -186,9 +188,10 @@
         <option value="$PROJECT_DIR$/src/Templates/environtmentMonitoringForm.twig" />
         <option value="$PROJECT_DIR$/src/Templates/Vendor/basicServicesForm.twig" />
         <option value="$PROJECT_DIR$/src/Templates/installationChecklistForm.twig" />
-        <option value="$PROJECT_DIR$/src/Http/Controller/AppController.php" />
         <option value="$PROJECT_DIR$/src/Templates/Vd/basicServicesForm.twig" />
+        <option value="$PROJECT_DIR$/src/Http/Controller/AppController.php" />
         <option value="$PROJECT_DIR$/src/Templates/layouts/head.twig" />
+        <option value="$PROJECT_DIR$/src/Templates/Documentation/siteDocumentation.twig" />
       </list>
     </option>
   </component>
@@ -298,6 +301,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Documentation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -462,7 +487,7 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/.nvm/versions/node/v4.2.3/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="head&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/layouts/head.twig&#10;App&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Http/Controller/AppController.php&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Http/Controller/AppController.php&#10;bas&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/Vendor/basicServicesForm.twig&#10;in&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/Vendor/integrationTestForm.twig&#10;bts&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/Vendor/btsForm.twig&#10;out&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/outdoorInstallationForm.twig&#10;insta&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/installationChecklistForm.twig&#10;en&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/environtmentMonitoringForm.twig&#10;install&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/installationChecklistForm.twig" />
+    <property name="SearchEverywhereHistoryKey" value="hea&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/layouts/head.twig&#10;app&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Http/Controller/AppController.php&#10;site&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/Documentation/siteDocumentation.twig&#10;basic&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/Vd/basicServicesForm.twig&#10;head&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/layouts/head.twig&#10;App&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Http/Controller/AppController.php&#10;bas&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/Vendor/basicServicesForm.twig&#10;in&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/Vendor/integrationTestForm.twig&#10;bts&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/Vendor/btsForm.twig&#10;out&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/outdoorInstallationForm.twig&#10;insta&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/installationChecklistForm.twig&#10;en&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/environtmentMonitoringForm.twig&#10;install&#9;FILE&#9;file://C:/xampp/htdocs/bts/src/Templates/installationChecklistForm.twig" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
@@ -630,13 +655,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/silex/silex/src/Silex/CallbackResolver.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/silex/silex/src/Silex/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -934,24 +952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Http/Controller/AppController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-133.46153" vertical-offset="2191" max-vertical-offset="6239">
-          <caret line="338" column="45" selection-start-line="338" selection-start-column="45" selection-end-line="338" selection-end-column="45" />
-          <folding>
-            <element signature="e#125#173#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Templates/Vd/basicServicesForm.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385" vertical-offset="1411" max-vertical-offset="1972">
-          <caret line="100" column="36" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Templates/Vd/btsCommissioningForm.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="46.346153" vertical-offset="1698" max-vertical-offset="2244">
@@ -992,11 +992,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Templates/Vd/basicServicesForm.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="1972">
+          <caret line="9" column="132" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="132" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Http/Controller/AppController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.384615" vertical-offset="5744" max-vertical-offset="6375">
+          <caret line="371" column="79" selection-start-line="371" selection-start-column="79" selection-end-line="371" selection-end-column="79" />
+          <folding>
+            <element signature="e#125#173#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Templates/layouts/head.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93772894" vertical-offset="2293" max-vertical-offset="3910">
-          <caret line="165" column="33" selection-start-line="165" selection-start-column="33" selection-end-line="165" selection-end-column="33" />
+        <state vertical-scroll-proportion="-16.423077" vertical-offset="1851" max-vertical-offset="3961">
+          <caret line="134" column="60" selection-start-line="134" selection-start-column="60" selection-end-line="134" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Templates/Documentation/siteDocumentation.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4047619" vertical-offset="51" max-vertical-offset="2686">
+          <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
+          <folding>
+            <element signature="e#802#829#0#HTML" expanded="true" />
+            <element signature="e#877#904#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

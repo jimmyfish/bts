@@ -75,6 +75,33 @@ class AppController implements ControllerProviderInterface
         $controller->get('/listSite',[$this,'showAllSite'])
             ->bind('listSite');
 
+        $controller->get('/formInstallation',[$this,'installationChecklistAction'])
+            ->bind('installationChecklist');
+
+        $controller->get('/formEnvirontment',[$this,'environtmentMonitoringAction'])
+            ->bind('environmentMonitoring');
+
+        $controller->get('/formOutdoor',[$this,'outdoorInstallationAction'])
+            ->bind('outdoorInstallation');
+
+        $controller->get('/btsForm',[$this,'btsFormAction'])
+            ->bind('btsForm');
+
+        $controller->get('/btsCommissioningForm',[$this,'btsCommissioningAction'])
+            ->bind('btsCommissioning');
+
+        $controller->get('/basicServiceForm',[$this,'basicServiceAction'])
+            ->bind('btsService');
+
+        $controller->get('/integrationTestForm',[$this,'integrationTestAction'])
+            ->bind('integrationTest');
+
+        $controller->get('/handoverTestInside',[$this,'handoverTestInsideAction'])
+            ->bind('handoverTestInside');
+
+        $controller->get('/handoverTestBetween',[$this,'handoverTestBetweenAction'])
+            ->bind('handoverTestBetween');
+
 
         return $controller;
     }
@@ -290,6 +317,51 @@ class AppController implements ControllerProviderInterface
         $infoUser = $this->app['session']->get('role');
 
         return $this->app['twig']->render('listSite.twig',['siteList'=>$site,'infoUser'=>$infoUser]);
+    }
+
+    public function installationChecklistAction()
+    {
+        return $this->app['twig']->render('installationChecklistForm.twig');
+    }
+
+    public function environtmentMonitoringAction()
+    {
+        return $this->app['twig']->render('environtmentMonitoringForm.twig');
+    }
+
+    public function outdoorInstallationAction()
+    {
+        return $this->app['twig']->render('outdoorInstallationForm.twig');
+    }
+
+    public function btsFormAction()
+    {
+        return $this->app['twig']->render('Vendor/btsForm.twig');
+    }
+
+    public function btsCommissioningAction()
+    {
+        return $this->app['twig']->render('Vendor/btsCommissioningForm.twig');
+    }
+
+    public function basicServiceAction()
+    {
+        return $this->app['twig']->render('Vendor/basicServicesForm.twig');
+    }
+
+    public function integrationTestAction()
+    {
+        return $this->app['twig']->render('Vendor/integrationTestForm.twig');
+    }
+
+    public function handoverTestInsideAction()
+    {
+        return $this->app['twig']->render('Vendor/handoverTestForm.twig');
+    }
+
+    public function handoverTestBetweenAction()
+    {
+        return $this->app['twig']->render('Vendor/handoverTestBettweenForm.twig');
     }
 
 }

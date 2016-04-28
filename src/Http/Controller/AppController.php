@@ -336,32 +336,32 @@ class AppController implements ControllerProviderInterface
 
     public function btsFormAction()
     {
-        return $this->app['twig']->render('Vendor/btsForm.twig');
+        return $this->app['twig']->render('Vd/btsForm.twig');
     }
 
     public function btsCommissioningAction()
     {
-        return $this->app['twig']->render('Vendor/btsCommissioningForm.twig');
+        return $this->app['twig']->render('Vd/btsCommissioningForm.twig');
     }
 
     public function basicServiceAction()
     {
-        return $this->app['twig']->render('Vendor/basicServicesForm.twig');
+        return $this->app['twig']->render('Vd/basicServicesForm.twig');
     }
 
     public function integrationTestAction()
     {
-        return $this->app['twig']->render('Vendor/integrationTestForm.twig');
+        return $this->app['twig']->render('Vd/integrationTestForm.twig');
     }
 
     public function handoverTestInsideAction()
     {
-        return $this->app['twig']->render('Vendor/handoverTestForm.twig');
+        return $this->app['twig']->render('Vd/handoverTestForm.twig');
     }
 
     public function handoverTestBetweenAction()
     {
-        return $this->app['twig']->render('Vendor/handoverTestBettweenForm.twig');
+        return $this->app['twig']->render('Vd/handoverTestBettweenForm.twig');
     }
 
 }

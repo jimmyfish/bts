@@ -38,6 +38,12 @@ class AppController implements ControllerProviderInterface
     {
         $controller = $app['controllers_factory'];
 
+        /**
+         * -------------------------
+         * Core Controller
+         * -------------------------
+         */
+
         $controller->get('/error404',[$this,'errorPageAction'])
             ->bind('errorPage');
 
@@ -54,6 +60,12 @@ class AppController implements ControllerProviderInterface
         $controller->match('/login', [$this, 'loginAdminAction'])
             ->before([$this, 'checkUserRole'])
             ->bind('loginAdmin');
+
+        /**
+         * -------------------------
+         * Admin or Owner Controller
+         * -------------------------
+         */
 
         $controller->match('/siteSelect', [$this, 'selectSiteAction'])
 //            ->before([$this, 'checkUserEngineer'])
@@ -75,17 +87,37 @@ class AppController implements ControllerProviderInterface
         $controller->get('/listSite',[$this,'showAllSite'])
             ->bind('listSite');
 
-        $controller->get('/formInstallation',[$this,'installationChecklistAction'])
-            ->bind('installationChecklist');
 
-        $controller->get('/formEnvirontment',[$this,'environtmentMonitoringAction'])
-            ->bind('environmentMonitoring');
+        /**
+         * -------------------------
+         * Engineer Controller
+         * -------------------------
+         */
 
         $controller->get('/formOutdoor',[$this,'outdoorInstallationAction'])
             ->bind('outdoorInstallation');
 
+        $controller->get('/formInstallation',[$this,'installationChecklistAction'])
+            ->bind('installationChecklist');
+
+        $controller->get('/formEnvironment',[$this,'environmentMonitoringAction'])
+            ->bind('environmentMonitoring');
+        
+        
+        /**
+         * -------------------------
+         * Documentation Controller
+         * -------------------------
+         */
+        
         $controller->get('/btsForm',[$this,'btsFormAction'])
             ->bind('btsForm');
+
+        /**
+         * -------------------------
+         * Vendor Controller
+         * -------------------------
+         */
 
         $controller->get('/btsCommissioningForm',[$this,'btsCommissioningAction'])
             ->bind('btsCommissioning');
@@ -325,19 +357,31 @@ class AppController implements ControllerProviderInterface
         return $this->app['twig']->render('listSite.twig',['siteList'=>$site,'infoUser'=>$infoUser]);
     }
 
+    /**
+     * Engineer Installation Form 2.1.1 (Indoor)
+     * @return mixed
+     */
     public function installationChecklistAction()
     {
-        return $this->app['twig']->render('installationChecklistForm.twig');
+        return $this->app['twig']->render('Engineer/installationChecklistForm.twig');
     }
 
-    public function environtmentMonitoringAction()
-    {
-        return $this->app['twig']->render('environtmentMonitoringForm.twig');
-    }
-
+    /**
+     * Engineer Installation Form 2.1.2 (Outdoor)
+     * @return mixed
+     */
     public function outdoorInstallationAction()
     {
-        return $this->app['twig']->render('outdoorInstallationForm.twig');
+        return $this->app['twig']->render('Engineer/outdoorInstallationForm.twig');
+    }
+
+    /**
+     * Engineer Environment Monitoring Form 2.2.1
+     * @return mixed
+     */
+    public function environmentMonitoringAction()
+    {
+        return $this->app['twig']->render('Engineer/environmentMonitoringForm.twig');
     }
 
     public function btsFormAction()

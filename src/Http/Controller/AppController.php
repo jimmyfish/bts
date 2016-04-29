@@ -105,6 +105,9 @@ class AppController implements ControllerProviderInterface
         $controller->get('/siteDocumentation',[$this,'siteDocumentationAction'])
             ->bind('siteDocumentation');
 
+        $controller->get('/punchListForm',[$this,'punchListAction'])
+            ->bind('punchListSummary');
+
 
         return $controller;
     }
@@ -370,6 +373,11 @@ class AppController implements ControllerProviderInterface
     public function siteDocumentationAction()
     {
         return $this->app['twig']->render('Documentation/siteDocumentation.twig');
+    }
+
+    public function punchListAction()
+    {
+        return $this->app['twig']->render('Vd/punchListForm.twig');
     }
 
 }

@@ -1,0 +1,748 @@
+{% extends 'layouts/head.twig' %}
+{% block customCSS %}
+{% endblock %}
+{% block content %}
+	<section id="content" class="table-layout animated fadeIn borderedBackground">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-11 center-block">
+					<div class="col-md-12">
+						<br>
+						<button type="button" onclick="print('printed-area')" class="btn btn-success hidden-print" style="vertical-align: middle;position:fixed;right:20px;border-radius: 0;"><i class="fa fa-print"></i></button>
+						<a href="#top" title="back to top" style="position:fixed;right:20px; bottom:75px" class="btn btn-primary"><i class="fa fa-chevron-up"></i></a>
+						<div class="col-md-2 pull-right">
+							
+						</div>
+						<br>
+						<br>
+						<div style="padding:30px 10px 10px 10px;background-color: #fff;margin-top: 10px;border:6px solid rgba(204, 204, 204,0.5)">
+							<div class="panel panel-visible" id="spy2">
+								<div class="panel-body pn">
+									<div id="printed-area">
+										<div id="">
+											<style type="text/css">
+											#proses {
+												border:1px solid #000;
+											}
+											.b1{
+												border:1px solid #000;
+											}
+											.logo-kanan{
+												float:right;
+												margin:50px 100px 0 0;
+											}
+											.logo-kiri{
+												float:left;
+												margin:50px 0 0 100px;
+											}
+											.f1{
+												font-size: 4em;
+											}
+											.secPrint {
+												min-width: 793.700787402px;
+												min-height: 1122.51px;
+												max-height: 1122.51px;
+												border:1px solid #000;
+											}
+											.confirmed {
+												margin-top: 100px;
+												margin-left: 100px;
+											}
+											.confirmed th, .confirmed td{
+												padding:5px;
+											}
+											.sign td{
+												font-weight: 700;
+												font-size: 1.2em;
+											}
+											#tabel3 th{
+												text-align: center;
+												font-weight: 600;
+												padding:5px;
+											}
+											#tabel3 td{
+												padding:0 5px;
+											}
+											#BOQ th {
+												text-align: center;
+											}
+											#BOQ th, #BOQ td {
+												padding:0 5px;
+											}
+											</style>
+											<section class="secPrint" id="1">
+												<img src="{{ app.request.basepath }}/assets/dist/img/xl-logo.png" alt="" class="logo-kiri" height="64">
+												
+												<img src="{{ app.request.basepath }}/assets/dist/img/huawei-logo.png" alt="" class="logo-kanan" height="64">
+												<h1 class="center f1" style="padding-top:300px">
+												<strong>Site Binder</strong>
+												</h1>
+												<h2 class="center">
+												2G XL Modernization Balomsum Project 2015
+												</h2>
+												<br>
+												<table style="width:600px;margin-left: 180px;font-size:2em;font-weight: 700;margin-top:100px;">
+													<tbody>
+														<tr>
+															<td>Site ID</td>
+															<td> : &nbsp;</td>
+															<td>B603</td>
+														</tr>
+														<tr>
+															<td>Site Name</td>
+															<td> : &nbsp;</td>
+															<td>KARANG BARU</td>
+														</tr>
+														<tr>
+															<td>Prodef</td>
+															<td> : &nbsp;</td>
+															<td>SW/6509</td>
+														</tr>
+														<tr>
+															<td>Site Type</td>
+															<td> : &nbsp;</td>
+															<td>INDOOR</td>
+														</tr>
+														<tr>
+															<td>BTS Type</td>
+															<td> : &nbsp;</td>
+															<td>BTS 3900A</td>
+														</tr>
+													</tbody>
+												</table>
+												<br>
+												<div class="confirmed">
+													<h4><strong>Document confirmed by :</strong></h4>
+													<table border="1" width="600" style="margin-right: 100px">
+														<thead>
+															<tr>
+																<th></th>
+																<th class="center">Name</th>
+																<th class="center">Phone</th>
+																<th class="center">Signature</th>
+															</tr>
+														</thead>
+														<tbody style="padding:2px">
+															<tr>
+																<td><strong>PT. HUAWEI SERVICE</strong></td>
+																<td></td>
+																<td></td>
+																<td></td>
+															</tr>
+															<tr>
+																<td><strong>PT. HUAWEI TECH INVESTMENT</strong></td>
+																<td></td>
+																<td></td>
+																<td></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</section>
+											<p style="margin-bottom:50px"></p>
+											{# Page 2 #}
+											<section class="secPrint" id="2">
+												<img src="{{ app.request.basepath }}/assets/dist/img/xl-logo.png" alt="" class="logo-kiri" height="64">
+												<img src="{{ app.request.basepath }}/assets/dist/img/huawei-logo.png" alt="" class="logo-kanan" height="64">
+												<p style="margin-top:150px;"></p>
+												<h1 class="center f1"><strong>CERTIFICATE</strong></h1>
+												<h2 class="center">of</h2>
+												<h1 class="center">Preliminary Acceptance</h1>
+												<br>
+												<h4 style="margin-left:100px;margin-right: 100px;font-weight: 500;line-height: 2">
+												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It is agreed that, from to , the preliminary acceptance test for site
+												B603_KARANG BARU(BTS) has been successfully held by both the PT.
+												XL Axiata expert and Huawei’s Engineer.<br>
+												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It also had been proved by both parties that Huawei’s
+												BTSequipments can fully satisfy the need of PT. XL Axiata under the
+												contract and can be rightly put into full service.
+												</h4>
+												{# Signature #}
+												<div class="sign"  style="margin-top:300px;margin-left: 80px;">
+													<table width="700">
+														<tbody>
+															<tr>
+																<td>&nbsp;&nbsp;PT. Huawei Service</td>
+																<td width="100"></td>
+																<td>&nbsp;&nbsp;PT. Huawei Tech Investment</td>
+															</tr>
+															<tr>
+																<td colspan="3" height="120">&nbsp;</td>
+															</tr>
+															<tr>
+																<td><u>
+																	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	
+																</u></td>
+																<td></td>
+																<td>
+																	<u>
+																	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																	
+																	</u>
+																</td>
+															</tr>
+															<tr>
+																<td>Date :</td>
+																<td></td>
+																<td>Date :</td>
+															</tr>
+														</tbody>
+													</table>
+													{# End of Signature #}
+												</div>
+											</section>
+											<p style="margin-bottom:50px"></p>
+											{# Page 3 #}
+											<section class="secPrint" id="3">
+												<img src="{{ app.request.basepath }}/assets/dist/img/xl-logo.png" alt="" class="logo-kiri" height="64"/>
+												<img src="{{ app.request.basepath }}/assets/dist/img/huawei-logo.png" alt="" class="logo-kanan" height="64"/>
+												<p style="margin-top:100px"></p>
+												<h3 class="center">SITE ACCEPTANCE DOCUMENT CHECKLIST</h3>
+												<br>
+												<table width="300" style="margin-left:100px;font-weight: 600">
+													<tbody>
+														<tr>
+															<td>SITE ID/Name</td>
+															<td> : &nbsp;</td>
+															<td>B603 / KARANG BARU</td>
+														</tr>
+														<tr>
+															<td>Region/Area</td>
+															<td> : &nbsp;</td>
+															<td>LOMBOK/MATARAM</td>
+														</tr>
+														<tr>
+															<td>Site Type</td>
+															<td> : &nbsp;</td>
+															<td>INDOOR</td>
+														</tr>
+														<tr>
+															<td>BTS Type</td>
+															<td> : &nbsp;</td>
+															<td>3900L</td>
+														</tr>
+													</tbody>
+												</table>
+												<br>
+												<p style="margin-left: 100px;font-size:14px;">
+													&nbsp;&nbsp;&nbsp;&nbsp;Hereby stated description and item below refer to the documents attached have been
+													approved for construction:
+												</p>
+												<table border="1" id="tabel3" width="600" style="margin-left: 100px">
+													<thead>
+														<tr>
+															<th rowspan="2">No.</th>
+															<th rowspan="2">Table of Contents</th>
+															<th colspan="2">Checked</th>
+															<th rowspan="2">Remarks</th>
+														</tr>
+														<tr>
+															<th>HTI</th>
+															<th>HS</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="center">1</td>
+															<td><strong>BOQ for BTS </strong></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">&nbsp;</td>
+															<td>BOQ 2G</td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2</td>
+															<td><strong>Acceptance Test Procedure</strong></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center"></td>
+															<td>Acceptance Test</td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.1</td>
+															<td><strong>Installation Checklist</strong></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.1.1</td>
+															<td>Indoor Installation Checklist</td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.1.2</td>
+															<td>Outdoor Installation Checklist</td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.2</td>
+															<td><strong>Environment Monitoring Functional Test</strong></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.2.1</td>
+															<td>External Environment Monitoring</td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.3</td>
+															<td><strong>BTS VSWR Test</strong></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.3.1</td>
+															<td>Feeder System Test</td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.4</td>
+															<td><strong>BTS Commissioning Record</strong></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.4.1</td>
+															<td>Network Parameter Checklist</td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.5</td>
+															<td><strong>Basic Service Items</strong></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.6</td>
+															<td><strong>Integration Test</strong></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.6.1</td>
+															<td>Call Test</td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.6.2</td>
+															<td>Handover Test Inside Site</td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.6.3</td>
+															<td>Handover Test Between Sites</td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.6.4</td>
+															<td>24 Hours Stability Test</td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.6.5</td>
+															<td>Alarm Query Test</td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">2.7</td>
+															<td><strong>Punch List Summary</strong></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">3</td>
+															<td><strong>Site Documentation</strong></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">4</td>
+															<td><strong>LMT Test Capture</strong></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+														<tr>
+															<td class="center">5</td>
+															<td><strong>Self Inspection Report (SIR)</strong></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td class="center"><i class="fa fa-square-o"></i></td>
+															<td></td>
+														</tr>
+													</tbody>
+												</table>
+												<table width="600" style="margin-top: 100px;margin-left: 100px;">
+													<tbody>
+														<tr>
+															<td class="center">PT. HUAWEI SERVICE</td>
+															<td  width="100"></td>
+															<td class="center">PT. HUAWEI TECH INVESTMENT</td>
+														</tr>
+														<tr>
+															<td colspan="3"  height="100">&nbsp;</td>
+														</tr>
+														<tr>
+															<td class="center">
+																<u>
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																
+																</u>
+															</td>
+															<td></td>
+															<td class="center">
+																<u>
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																
+																</u>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</section>
+											<p style="margin-bottom:50px"></p>
+											
+											{# Page 4 #}
+											<section class="secPrint" id="4">
+												<img src="{{ app.request.basepath }}/assets/dist/img/xl-logo.png" alt="" class="logo-kiri" height="64"/>
+												<img src="{{ app.request.basepath }}/assets/dist/img/huawei-logo.png" alt="" class="logo-kanan" height="64"/>
+												<p style="margin-top:100px"></p>
+												<h3 class="center">1. BOQFORBTS (2G)</h3>
+												<br>
+												<table width="400" style="margin-left:100px;font-weight: 600">
+													<tbody>
+														<tr>
+															<td>Project Name</td>
+															<td> : &nbsp;</td>
+															<td>2G XL Modernization Balomsum Project 2015</td>
+														</tr>
+														<tr>
+															<td>Customer</td>
+															<td> : &nbsp;</td>
+															<td>PT. XL AXIATA</td>
+														</tr>
+														<tr>
+															<td>Site ID</td>
+															<td> : &nbsp;</td>
+															<td>B603</td>
+														</tr>
+														<tr>
+															<td>Site Name</td>
+															<td> : &nbsp;</td>
+															<td>KARANG BARU</td>
+														</tr>
+														<tr>
+															<td>Site Type</td>
+															<td> : &nbsp;</td>
+															<td>INDOOR</td>
+														</tr>
+														<tr>
+															<td>Config System</td>
+															<td> : &nbsp;</td>
+															<td>UL</td>
+														</tr>
+														<tr>
+															<td>Date</td>
+															<td> : &nbsp;</td>
+															<td>&nbsp;</td>
+														</tr>
+													</tbody>
+												</table>
+												<br>
+												<table id="BOQ" border="1" width="600" style="margin-left: 100px">
+													<thead>
+														<tr>
+															<th colspan="8">Type BTS 3900A BOQ</th>
+														</tr>
+														<tr>
+															<th rowspan="2">Material</th>
+															<th rowspan="2">No.</th>
+															<th rowspan="2">Code</th>
+															<th rowspan="2">Description</th>
+															<th rowspan="2">UOM</th>
+															<th colspan="2">BOQ</th>
+															<th rowspan="2">Remark</th>
+														</tr>
+														<tr>
+															<th>As Plan</th>
+															<th>As Built</th>
+														</tr>
+														<tr style="background-color: blue">
+															<th>>>></th>
+															<th>A1/1</th>
+															<th colspan="2">BTS3900A GSM, DC -48V</th>
+															<th>PAC</th>
+															<th>&nbsp;</th>
+															<th>&nbsp;</th>
+															<th>&nbsp;</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>BTS3900L</td>
+															<td></td>
+															<td>02113719</td>
+															<td>BTS3900L Cabinet (DC -48V)</td>
+															<td>unit</td>
+															<td>1</td>
+															<td>1</td>
+															<td>New</td>
+														</tr>
+														<tr>
+															<td>BBU</td>
+															<td></td>
+															<td>02315848</td>
+															<td>BBU3900A, QWLM1BBU2 Distributed Base Station Base
+																Band Unit (-48V)
+															</td>
+															<td>unit</td>
+															<td>1</td>
+															<td>1</td>
+															<td>New</td>
+														</tr>
+														<tr>
+															<td>MRFU900</td>
+															<td></td>
+															<td>02310KBU</td>
+															<td>RF Unit V2 for Multi-Mode 900MHz PGSM</td>
+															<td>unit</td>
+															<td>0</td>
+															<td>0</td>
+															<td>N/A</td>
+														</tr>
+														<tr>
+															<td>MRFU1800</td>
+															<td></td>
+															<td>02310KBH</td>
+															<td>RF Unit V2 for Multi-Mode 1800MHz</td>
+															<td>unit</td>
+															<td>1</td>
+															<td>1</td>
+															<td>N/A</td>
+														</tr>
+														<tr>
+															<td>MRFUd1800</td>
+															<td></td>
+															<td>02310CEU</td>
+															<td>MRFUd for Multi-Mode 1800MHz</td>
+															<td>unit</td>
+															<td>1</td>
+															<td>1</td>
+															<td>New</td>
+														</tr>
+														<tr>
+															<td>GTMU</td>
+															<td></td>
+															<td>03030LPM</td>
+															<td>Main Control and Transport unit(4E1&amp;1 electrical FE&amp;1
+															optical FE)</td>
+															<td>unit</td>
+															<td>1</td>
+															<td>1</td>
+															<td></td>
+														</tr>
+														<tr>
+															<td>UMPT</td>
+															<td></td>
+															<td>3054887</td>
+															<td>Universal Main Processing &amp; Transmission Unit (4
+															E1&amp;1 Electrical FE/GE&amp;1 Optical FE/GE,UMPTb1)</td>
+															<td>unit</td>
+															<td>0</td>
+															<td>0</td>
+															<td></td>
+														</tr>
+													</tbody>
+												</table>
+												<br>
+												<p style="margin-left: 150px"><strong>* Site BOQ will base on the actual material installed</strong></p>
+											</section>
+											<p style="margin-bottom:50px"></p>
+
+											{# Page 5 #}
+											<section class="secPrint" id="5">
+												<img src="{{ app.request.basepath }}/assets/dist/img/xl-logo.png" alt="" class="logo-kiri" height="64">
+												
+												<img src="{{ app.request.basepath }}/assets/dist/img/huawei-logo.png" alt="" class="logo-kanan" height="64">
+												<h1 class="center f1" style="padding-top:250px">
+												<strong>ATP BTS 2G</strong>
+												</h1>
+												<br>
+												<table style="width:600px;margin-left: 180px;font-size:2em;font-weight: 700;margin-top:100px;">
+													<tbody>
+														<tr>
+															<td>Regional</td>
+															<td> : &nbsp;</td>
+															<td>BALI/LOMBOK/SUMBAWA</td>
+														</tr>
+														<tr>
+															<td>Site ID</td>
+															<td> : &nbsp;</td>
+															<td>B603</td>
+														</tr>
+														<tr>
+															<td>Site Name</td>
+															<td> : &nbsp;</td>
+															<td>KARANG BARU</td>
+														</tr>
+														<tr>
+															<td>Prodef</td>
+															<td> : &nbsp;</td>
+															<td>SW/6509</td>
+														</tr>
+														<tr>
+															<td>Site Type</td>
+															<td> : &nbsp;</td>
+															<td>INDOOR</td>
+														</tr>
+														<tr>
+															<td>BTS Type</td>
+															<td> : &nbsp;</td>
+															<td>BTS 3900A</td>
+														</tr>
+													</tbody>
+												</table>
+												<br>
+												<table width="600" style="margin-top: 230px;margin-left: 100px;">
+													<tbody>
+														<tr>
+															<td class="center">PT. HUAWEI SERVICE</td>
+															<td  width="100"></td>
+															<td class="center">PT. HUAWEI TECH INVESTMENT</td>
+														</tr>
+														<tr>
+															<td colspan="3"  height="100">&nbsp;</td>
+														</tr>
+														<tr>
+															<td class="center">
+																<u>
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																
+																</u>
+															</td>
+															<td></td>
+															<td class="center">
+																<u>
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																
+																</u>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</section>
+											<p style="margin-bottom:50px"></p>
+
+											{# Page 6 #}
+											<section class="secPrint" id="6">
+												<img src="{{ app.request.basepath }}/assets/dist/img/xl-logo.png" alt="" class="logo-kiri" height="64">
+												<img src="{{ app.request.basepath }}/assets/dist/img/huawei-logo.png" alt="" class="logo-kanan" height="64">
+												<p style="margin-top:100px"></p>
+												<h3 class="center">SITE ACCEPTANCE DOCUMENT CHECKLIST</h3>
+												<br>
+												<div style="margin-left: 100px; line-height: 1">
+													<h3>2.1. Installation Checklist</h3>
+													<div style="margin-left: 50px">
+														<h3>2.1.1.Indoor</h3>
+														<h3>2.1.2.Outdoor</h3>
+													</div>
+													<h3>2.2. Environment Monitoring Functional Test</h3>
+													<div style="margin-left: 50px">
+														<h3>2.2.1 External Environment Monitoring</h3>
+													</div>
+													<h3>2.3.BTSVSWR Test</h3>
+													<div style="margin-left: 50px">
+														<h3>2.3.1.Feeder System Test</h3>
+													</div>
+													<h3>2.4. BTS Commissioning Record</h3>
+													<div style="margin-left: 50px">
+														<h3>2.4.1. Network Parameter Checklist</h3>
+													</div>
+													<h3>2.5 Basic Service Items</h3>
+													<h3>2.6. Integration Test</h3>
+													<div style="margin-left: 50px">
+														<h3>2.6.1 Call Test</h3>
+														<h3>2.6.2 Handover Test Inside Sites</h3>
+														<h3>2.6.3 Handover Test Between Sites</h3>
+														<h3>2.6.4 24 Hours Stability Test</h3>
+														<h3>2.6.5 Alarm Query Test</h3>
+													</div>
+													<h3>2.7 Punch List Summary</h3>
+												</div>
+											</section>
+											<p style="margin-bottom:50px"></p>
+
+											{# Page 7 #}
+											<section class="secPrint" id="7">
+												
+											</section>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{% block customJS %}
+	<script>
+	function print(printed) {
+	var isi = document.getElementById(printed);
+	var popupWin = window.open('', '_blank', 'width=1000,height=700');
+	popupWin.document.open()
+	// popupWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="{{ app.request.basepath }}assets/bootstrap/css/bootstrap.min.css" /><link rel="stylesheet" type="text/css" href="{{ app.request.basepath }}assets/dist/css/global.css" /></head><body>' + isi.innerHTML + '</body></html>');
+	popupWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="{{ app.request.basepath }}assets/bootstrap/css/bootstrap.min.css" /><link rel="stylesheet" type="text/css" href="{{ app.request.basepath }}assets/dist/css/global.css" /></head><body  onload="window.print();window.close();">' + isi.innerHTML + '</body></html>');
+	popupWin.document.close();
+	}
+	</script>
+{% endblock %}

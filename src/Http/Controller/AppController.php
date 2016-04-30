@@ -34,6 +34,11 @@ class AppController implements ControllerProviderInterface
         $this->app = $app;
     }
 
+    /**
+     * Main Controller
+     * @param  Application $app [description]
+     * @return Controller           [description]
+     */
     public function connect(Application $app)
     {
         $controller = $app['controllers_factory'];
@@ -60,6 +65,9 @@ class AppController implements ControllerProviderInterface
         $controller->match('/login', [$this, 'loginAdminAction'])
             ->before([$this, 'checkUserRole'])
             ->bind('loginAdmin');
+
+        $controller->get('/printReport', [$this, 'printReportAction'])
+            ->bind('printReportAll');
 
         /**
          * -------------------------
@@ -139,7 +147,6 @@ class AppController implements ControllerProviderInterface
 
         $controller->get('/punchListForm',[$this,'punchListAction'])
             ->bind('punchListSummary');
-
 
         return $controller;
     }
@@ -422,6 +429,11 @@ class AppController implements ControllerProviderInterface
     public function punchListAction()
     {
         return $this->app['twig']->render('Vd/punchListForm.twig');
+    }
+
+    public function printReportAction()
+    {
+        return $this->app['twig']->render('printReport.twig');
     }
 
 }

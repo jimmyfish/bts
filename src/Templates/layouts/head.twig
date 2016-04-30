@@ -21,6 +21,8 @@
         folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="{{ app.request.basepath }}assets/dist/css/skins/_all-skins.min.css">
         <link rel="stylesheet" href="{{ app.request.basepath }}assets/dist/css/global.css">
+        {% block customCSS %}
+        {% endblock %}
         <link href="{{ app.request.basepath }}assets/dist/img/cart-icon.png" rel="icon">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -134,34 +136,16 @@
                                     <i class="fa fa-angle-left pull-right"></i>
                                     <ul class="treeview-menu">
                                         <li>
-                                            <a href="">
-                                                <i class="fa fa-angle-left pull-right"></i>2.1 Installation Checklist
+                                            <a href="{{ ('/formInstallation') }}">
+                                                <i class="fa fa-circle-o"></i>
+                                                Indoor &amp; Outdoor
                                             </a>
-                                            <ul class="treeview-menu">
-                                                <li>
-                                                    <a href="{{ ('/formInstallation') }}">
-                                                        <i class="fa fa-circle-o"></i>2.1.1 Indoor
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ ('/formOutdoor') }}">
-                                                        <i class="fa fa-circle-o"></i>2.1.2 Outdoor
-                                                    </a>
-                                                </li>
-                                            </ul>
                                         </li>
                                         <li>
-                                            <a href="">
-                                                <i class="fa fa-angle-left pull-right">
-                                                </i>2.2 Environment Monitoring
+                                            <a href="{{ ('/formEnvironment') }}">
+                                                <i class="fa fa-circle-o"></i>
+                                                External Environment
                                             </a>
-                                            <ul class="treeview-menu">
-                                                <li>
-                                                    <a href="{{ ('/formEnvironment') }}">
-                                                        <i class="fa fa-circle-o"></i>2.2.1 External Environment
-                                                    </a>
-                                                </li>
-                                            </ul>
                                         </li>
                                     </ul>
                                 </a>
@@ -255,7 +239,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{ ('/printReport') }}">
                                     <i class="fa fa-print"></i>
                                     <span>Print</span>
                                 </a>
@@ -317,5 +301,7 @@
                 });
                 });
                 </script>
+                {% block customJS %}
+                {% endblock %}
             </body>
         </html>

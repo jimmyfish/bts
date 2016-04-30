@@ -1,9 +1,7 @@
 {% extends 'layouts/head.twig' %}
 {% block content %}
     <section id="content" class="table-layout animated fadeIn borderedBackground">
-
         <div class="container-fluid">
-
             <div class="row">
                 <div class="col-md-11 center-block">
                     <div class="col-md-12">
@@ -19,73 +17,62 @@
                             </div>
                         {% endfor %}
                         <div style="padding:30px 10px 10px 10px;background-color: #fff;margin-top: 10px;border:6px solid rgba(204, 204, 204,0.5)">
-
-
                             <div class="panel panel-visible" id="spy2">
-
                                 <div class="panel-body pn">
                                     {% if ((app.session.get('role')['value']) == 0) %}
                                         <a href="{{ ('/newUser') }}" class="btn btn-primary" style="margin:0 0 15px 5px;"><i class="glyphicons glyphicons-user_add"></i> &nbsp;New User</a>
                                     {% endif %}
                                     <table class="table table-striped table-hover table-bordered" id="datatable2" cellspacing="0" width="100%">
-
                                         <thead>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Full Name</th>
-                                            <th>Username</th>
-                                            <th>Role</th>
-                                            <th>Created Date</th>
-
-                                            {% if ((app.session.get('role')['value']) == 0) %}
-                                                <th>Operation</th>
-                                            {% endif %}
-
-                                        </tr>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>Full Name</th>
+                                                <th>Username</th>
+                                                <th>Role</th>
+                                                <th>Created Date</th>
+                                                {% if ((app.session.get('role')['value']) == 0) %}
+                                                    <th>Operation</th>
+                                                {% endif %}
+                                            </tr>
                                         </thead>
                                         <tbody>
-                                        {% if (userList|length > 0)%}
-                                        {% set i = 1 %}
-                                        {% for list in userList %}
-
-                                            <tr>
-                                                <td>{{ i }}</td>
-                                                <td style="text-transform: capitalize">{{ list.name }}</td>
-                                                <td>{{ list.username }}</td>
-                                                {% if (list.role == 0)%}
-                                                    <td>Owner</td>
-                                                {% elseif (list.role == 1) %}
-                                                    <td>Vendor</td>
-                                                {% elseif (list.role == 2) %}
-                                                    <td>Documentation</td>
-                                                {% else %}
-                                                    <td>Engineer</td>
-                                                {% endif %}
-                                                <td>{{ list.createdAt|date('d M Y') }}</td>
-
-                                                {% if (app.session.get('role')['value'] == 0) %}
-                                                    <td>
-                                                        <a href="/delete/{{ list.id }}" title="Delete Account">
-                                                            <i class="imoon imoon-remove" style="color: #EC6F5A"></i>
-                                                        </a>
-                                                        &nbsp;
-                                                        <a href="#" title="Edit Account">
-                                                            <i class="imoon imoon-quill" style="color:#9b59b6;"></i>
-                                                        </a>
-                                                    </td>
-                                                {% endif %}
-
-
-                                            </tr>
-
-                                            {% set i = i + 1 %}
-                                        {% endfor %}
-                                        </tbody>
+                                            {% if (userList|length > 0)%}
+                                                {% set i = 1 %}
+                                                {% for list in userList %}
+                                                    <tr>
+                                                        <td>{{ i }}</td>
+                                                        <td style="text-transform: capitalize">{{ list.name }}</td>
+                                                        <td>{{ list.username }}</td>
+                                                        {% if (list.role == 0)%}
+                                                            <td>Owner</td>
+                                                        {% elseif (list.role == 1) %}
+                                                            <td>Vendor</td>
+                                                        {% elseif (list.role == 2) %}
+                                                            <td>Documentation</td>
+                                                        {% else %}
+                                                            <td>Engineer</td>
+                                                        {% endif %}
+                                                        <td>{{ list.createdAt|date('d M Y') }}</td>
+                                                        {% if (app.session.get('role')['value'] == 0) %}
+                                                            <td>
+                                                                <a href="/delete/{{ list.id }}" title="Delete Account">
+                                                                    <i class="imoon imoon-remove" style="color: #EC6F5A"></i>
+                                                                </a>
+                                                                &nbsp;
+                                                                <a href="#" title="Edit Account">
+                                                                    <i class="imoon imoon-quill" style="color:#9b59b6;"></i>
+                                                                </a>
+                                                            </td>
+                                                        {% endif %}
+                                                    </tr>
+                                                    {% set i = i + 1 %}
+                                                {% endfor %}
+                                            </tbody>
                                         {% else %}
                                             <tbody>
-                                            <tr>
-                                                <td colspan="10" style="text-align: center" class="primary">Tidak ada User</td>
-                                            </tr>
+                                                <tr>
+                                                    <td colspan="10" style="text-align: center" class="primary">Tidak ada User</td>
+                                                </tr>
                                             </tbody>
                                         {% endif %}
                                     </table>

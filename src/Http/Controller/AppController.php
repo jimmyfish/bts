@@ -151,7 +151,7 @@ class AppController implements ControllerProviderInterface
         $controller->get('/punchListForm',[$this,'punchListAction'])
             ->bind('punchListSummary');
 
-        $controller->get('/showJson',[$this,'showJsonAction'])
+        $controller->match('/showJson',[$this,'showJsonAction'])
             ->bind('showJsonSite');
 
         return $controller;
@@ -371,12 +371,20 @@ class AppController implements ControllerProviderInterface
         return $this->app['twig']->render('listSite.twig',['siteList'=>$site,'infoUser'=>$infoUser]);
     }
 
-    public function showJsonAction()
+    public function showJsonAction(Request $request)
     {
 
         $site = $this->app['site.repository']->findAll();
 
-        return var_dump($site);
+        if($request->getMethod() === 'GET'){
+            return $this->app->json($site);
+        }
+
+        if($request->getMethod() === 'POST'){
+            return $this->app->json($site);
+        }
+//        return var_dump($site);
+
     }
 
     /**

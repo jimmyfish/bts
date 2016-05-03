@@ -22,97 +22,97 @@ class Site
      * @GeneratedValue
      * @var int
      */
-    private $id;
+    public $id;
 
     /**
      * @Column(type="string",length=255,nullable=false)
      * @var string
      */
-    private $regional;
+    public $regional;
 
     /**
      * @Column(type="string",length=255,nullable=false)
      * @var string
      */
-    private $poc;
+    public $poc;
 
     /**
      * @Column(type="string",length=255,nullable=false)
      * @var string
      */
-    private $prodef;
+    public $prodef;
 
     /**
      * @Column(type="string",name="site_id",length=255,nullable=false)
      * @var string
      */
-    private $siteId;
+    public $siteId;
 
     /**
      * @Column(type="string",name="site_name",length=255,nullable=false)
      * @var string
      */
-    private $siteName;
+    public $siteName;
 
     /**
      * @Column(type="string",name="tower_owner",length=255,nullable=false)
      * @var string
      */
-    private $towerOwner;
+    public $towerOwner;
 
     /**
      * @Column(type="string",length=255,nullable=false)
      * @var string
      */
-    private $address;
+    public $address;
 
     /**
      * @Column(type="string",length=255,nullable=false)
      * @var string
      */
-    private $fop;
+    public $fop;
 
     /**
      * @Column(type="string",length=255,nullable=false)
      * @var string
      */
-    private $longitude;
+    public $longitude;
 
     /**
      * @Column(type="string",length=255,nullable=false)
      * @var string
      */
-    private $latitude;
+    public $latitude;
 
     /**
      * @Column(type="string",name="existing_system",length=255,nullable=false)
      * @var string
      */
-    private $existingSystem;
+    public $existingSystem;
 
     /**
      * @Column(type="string",length=255,nullable=false)
      * @var string
      */
-    private $remark;
+    public $remark;
 
     /**
      * @Column(type="string",length=255,nullable=false)
      * @var string
      */
-    private $stats;
+    public $stats;
 
     /**
      * @Column(type="string",length=255,nullable=false)
      * @var string
      */
-    private $subcont;
+    public $subcont;
 
     /**
      * @Column(type="string", length=255, nullable=false)
      * @var string
      */
-    private $spv;
+    public $spv;
 
     public static function create($regional,$poc,$prodef,$siteId,$siteName,$towerOwner,$address,$fop,$spv,$longitude,$latitude,$existingSystem,$remark,$stats,$subcont)
     {

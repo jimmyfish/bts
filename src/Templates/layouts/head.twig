@@ -244,6 +244,13 @@
                                     <span>Print</span>
                                 </a>
                             </li>
+                            {% elseif ((app.session.get('role')['value']) == 2) %}
+                                <li>
+                                    <a href="{{ ('/printReport') }}">
+                                        <i class="fa fa-print"></i>
+                                        <span>Print</span>
+                                    </a>
+                                </li>
                         {% else %}
                             <li>
                                 <a href="{{ ('/siteSelect') }}">

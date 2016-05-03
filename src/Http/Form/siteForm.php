@@ -53,7 +53,7 @@ class siteForm extends AbstractType
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input Regional','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input Regional (ex:LOMBOK)','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
         )->add(
@@ -62,7 +62,7 @@ class siteForm extends AbstractType
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input poc','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input poc (ex:MATARAM)','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
 
@@ -72,7 +72,7 @@ class siteForm extends AbstractType
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input prodef','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input prodef (ex:SW/6971)','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
 
@@ -82,7 +82,7 @@ class siteForm extends AbstractType
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input site id','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input site id (ex:B661)','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
 
@@ -92,7 +92,7 @@ class siteForm extends AbstractType
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input Site Name','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input Site Name (ex:B661_SAJAN UTARA LOMTIM)','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
         )->add(
@@ -101,7 +101,7 @@ class siteForm extends AbstractType
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input tower owner','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input tower owner (ex:XL)','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
         )->add(
@@ -110,7 +110,7 @@ class siteForm extends AbstractType
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input address','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input address (ex:JL.SELONGKEN RT.02 KEC.SEMBALUN KAB.LOMBOK TIMUR,NTB)','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
 
@@ -120,7 +120,7 @@ class siteForm extends AbstractType
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input fop','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input fop (ex:NURUL AMINULLAH (+6281933155295))','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
 
@@ -130,26 +130,26 @@ class siteForm extends AbstractType
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input spv','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input spv (ex:LOMBOK 2)','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
         )->add(
             'longitude',
-            'text',
+            'integer',
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input longitude','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input longitude (ex:116.497184)','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
 
         )->add(
             'latitude',
-            'text',
+            'integer',
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input latitude','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input latitude (ex:-8.316165)','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
 
@@ -159,7 +159,7 @@ class siteForm extends AbstractType
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input existing system','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input existing system (ex:UL)','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
 
@@ -169,7 +169,7 @@ class siteForm extends AbstractType
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input remark','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input remark (ex:Add 1 Pcs Cab.3900L (900), Add MCB 2x80A)','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
 
@@ -179,7 +179,7 @@ class siteForm extends AbstractType
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input stats','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input stats (ex:Indoor)','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
 
@@ -189,7 +189,7 @@ class siteForm extends AbstractType
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input subcont','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input subcont (ex:SELNET)','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
 

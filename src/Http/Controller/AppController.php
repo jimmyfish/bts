@@ -13,17 +13,20 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Silex\Application;
 use Silex\ControllerCollection;
 use Silex\ControllerProviderInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Yanna\bts\Domain\Entity\Site;
 use Yanna\bts\Http\Form\loginForm;
 use Yanna\bts\Domain\Entity\User;
 //use Yanna\bts\Http\Form\UserForm;
+use Symfony\Component\HttpFoundation\Response;
 use Yanna\bts\Domain\Services\userPasswordMatcher;
 //use Yanna\bts\Domain\Services\UserServices;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Yanna\bts\Http\Form\siteForm;
 use Yanna\bts\Http\Form\selectSiteForm;
 use Yanna\bts\Http\Form\userForm;
+
 
 class AppController implements ControllerProviderInterface
 {
@@ -148,6 +151,9 @@ class AppController implements ControllerProviderInterface
         $controller->get('/punchListForm',[$this,'punchListAction'])
             ->bind('punchListSummary');
 
+        $controller->get('/showJson',[$this,'showJsonAction'])
+            ->bind('showJsonSite');
+
         return $controller;
     }
 
@@ -164,11 +170,12 @@ class AppController implements ControllerProviderInterface
 
         $form->handleRequest($request);
 
+
         if (! $form->isValid()) {
             return $this->app['twig']->render('Engineer/siteSelect.twig',['form' => $form->createView(), 'infoSite' => $infoAll]);
         }
 
-        $this->app['session']->set('site', ['value' => $selectSiteForm->getSiteId()]);
+     return $this->app['session']->set('site', ['value' => $selectSiteForm->getSiteId()]);
 
 //        return var_dump($infoSite);
 
@@ -362,6 +369,14 @@ class AppController implements ControllerProviderInterface
         $infoUser = $this->app['session']->get('role');
 
         return $this->app['twig']->render('listSite.twig',['siteList'=>$site,'infoUser'=>$infoUser]);
+    }
+
+    public function showJsonAction()
+    {
+
+        $site = $this->app['site.repository']->findAll();
+
+        return var_dump($site);
     }
 
     /**

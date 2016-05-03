@@ -132,6 +132,8 @@ class Site
         $siteInfo->setRemark($remark);
         $siteInfo->setStats($stats);
         $siteInfo->setsubcont($subcont);
+
+        return $siteInfo;
     }
 
     public function getId()

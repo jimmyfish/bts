@@ -18,8 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Yanna\bts\Domain\Entity\Site;
 use Yanna\bts\Http\Form\loginForm;
 use Yanna\bts\Domain\Entity\User;
-//use Yanna\bts\Http\Form\UserForm;
-use Symfony\Component\HttpFoundation\Response;
+use Yanna\bts\Http\Form\photoForm;
 use Yanna\bts\Domain\Services\userPasswordMatcher;
 //use Yanna\bts\Domain\Services\UserServices;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -89,8 +88,11 @@ class AppController implements ControllerProviderInterface
         $controller->get('/listUser',[$this,'showAllUser'])
             ->bind('listUser');
 
-        $controller->get('/delete/{id}',[$this,'deleteUserAction'])
+        $controller->get('/deleteUser/{id}',[$this,'deleteUserAction'])
             ->bind('deleteUser');
+
+        $controller->get('/deleteSite/{id}',[$this,'deleteSiteAction'])
+            ->bind('deleteSite');
 
         $controller->match('/newSite',[$this,'newSiteAction'])
             ->bind('newInputSite');
@@ -328,10 +330,10 @@ class AppController implements ControllerProviderInterface
 
         $this->app['orm.em']->remove($user);
         $this->app['orm.em']->flush();
-        $this->app['orm.em']->getFlashBag->add(
-            'Message_Success',
-            'Account deleted Successfully'
-        );
+//        $this->app['orm.em']->getFlashBag()->add(
+//            'Message_Success',
+//            'Account deleted Successfully'
+//        );
 
         return $this->app->redirect($this->app['url_generator']->generate('listUser'));
     }
@@ -351,7 +353,7 @@ class AppController implements ControllerProviderInterface
             return $this->app['twig']->render('newSite.twig', ['form' => $formBuilder->createView()]);
         }
 
-        $dataSite = Site::create($newSiteForm->getRegional(),$newSiteForm->getPoc(),$newSiteForm->getProdef(),$newSiteForm->getSiteId(),$newSiteForm->getSiteName(),$newSiteForm->getTowerOwner(),$newSiteForm->getAddress(),$newSiteForm->getFop(),$newSiteForm->getSpv(),$newSiteForm->getLongitude(),$newSiteForm->getLatitude(),$newSiteForm->getExistingSystem(),$newSiteForm->getRemark(),$newSiteForm->getStats(),$newSiteForm->getSubcont());
+        $dataSite = Site::create($newSiteForm->getRegional(),$newSiteForm->getPoc(),$newSiteForm->getProdef(),$newSiteForm->getSiteId(),$newSiteForm->getSiteName(),$newSiteForm->getTowerId(),$newSiteForm->getTowerOwner(),$newSiteForm->getAddress(),$newSiteForm->getFop(),$newSiteForm->getSpv(),$newSiteForm->getLongitude(),$newSiteForm->getLatitude(),$newSiteForm->getExistingSystem(),$newSiteForm->getRemark(),$newSiteForm->getStats(),$newSiteForm->getSubcont());
 
         $this->app['orm.em']->persist($dataSite);
         $this->app['orm.em']->flush();
@@ -360,6 +362,22 @@ class AppController implements ControllerProviderInterface
             'message_success',
             'Account Created Successfully'
         );
+        return $this->app->redirect($this->app['url_generator']->generate('listSite'));
+    }
+
+
+    public function deleteSiteAction()
+    {
+        $site = $this->app['site.repository']->findById($this->app['request']->get('id'));
+
+        $this->app['orm.em']->remove($site);
+        $this->app['orm.em']->flush();
+
+//        $this->app['session']->getFlashBag()->add(
+//            'Message_Success',
+//            'Site deleted Successfully'
+//        );
+
         return $this->app->redirect($this->app['url_generator']->generate('listSite'));
     }
 
@@ -385,6 +403,152 @@ class AppController implements ControllerProviderInterface
         }
 //        return var_dump($site);
 
+    }
+
+    public function photoAction(Request $request)
+    {
+        $photoForm = new photoForm();
+        $formBuilder = $this->app['form.repository']->create($photoForm,$photoForm);
+
+        if($request->getMethod() === 'GET'){
+            return $this->app['twig']->render('photo.twig',['form'=>$formBuilder->createView()]);
+        }
+
+        $formBuilder->handleRequest($request);
+
+        if(! $formBuilder->isValid())
+        {
+            return $this->app['twig']->render('photo.twig',['form'=>$formBuilder->createView()]);
+        }
+
+        $files = new ArrayCollection();
+
+        $files->add(Dokumen::create(
+            'Site Location',
+            $photoForm->getSiteLocation()
+        ));
+
+        $files->add(Dokumen::create(
+            'GPS Coordinate',
+            $photoForm->getGpsCoordinate()
+        ));
+
+        $files->add(Dokumen::create(
+            'Shelter View',
+            $photoForm->getShelterView()
+        ));
+
+        $files->add(Dokumen::create(
+            'Overview of inside the cabinet',
+            $photoForm->getOverviewInside()
+        ));
+
+        $files->add(Dokumen::create(
+           'FEP Indoor View',
+            $photoForm->getFepIndoor()
+        ));
+
+        $files->add(Dokumen::create(
+           'FEP Outdoor View',
+            $photoForm->getFepOutdoor()
+        ));
+
+        $files->add(Dokumen::create(
+            'Feeder Indoor Installation',
+            $photoForm->getFeederIndoor()
+        ));
+
+        $files->add(Dokumen::create(
+            'Feeder Bending',
+            $photoForm->getFeederBreeding()
+        ));
+
+        $files->add(Dokumen::create(
+            'Internal Grounding Bar (IGB)',
+            $photoForm->getInternalGrounding()
+        ));
+
+        $files->add(Dokumen::create(
+            'External GB at Shelter',
+            $photoForm->getExternalGb()
+        ));
+
+        $files->add(Dokumen::create(
+            'Alarm Box',
+            $photoForm->getAlarmBox()
+        ));
+
+        $files->add(Dokumen::create(
+            'ACPDB Internal View',
+            $photoForm->getAcpdbInternal()
+        ));
+
+        $files->add(Dokumen::create(
+            'MCB at DCPDB',
+            $photoForm->getMcbAt()
+        ));
+
+        $files->add(Dokumen::create(
+            'Rectifier Cabinet',
+            $photoForm->getRectifierCabinet()
+        ));
+
+        $files->add(Dokumen::create(
+            'MCB at Rectifier Cabinet',
+            $photoForm->getMcbAtRectifier()
+        ));
+
+        $files->add(Dokumen::create(
+            'Rack 19',
+            $photoForm->getRack()
+        ));
+
+        $files->add(Dokumen::create(
+            'Antenna Mechanical Electrical Tilting Sector 1',
+            $photoForm->getAntennaMechanicalSectorA()
+        ));
+
+        $files->add(Dokumen::create(
+            'Antenna Mechanical Electrical Tilting Sector 2',
+            $photoForm->getAntennaMechanicalSectorB()
+        ));
+
+        $files->add(Dokumen::create(
+            'Antenna Mechanical Electrical Tilting Sector 3',
+            $photoForm->getAntennaMechanicalSectorC()
+        ));
+
+        $files->add(Dokumen::create(
+            'Azimuth & Panoramic Sector 1',
+            $photoForm->getAzimuthSectorA()
+        ));
+
+        $files->add(Dokumen::create(
+            'Azimuth & Panoramic Sector 2',
+            $photoForm->getAzimuthSectorB()
+        ));
+
+        $files->add(Dokumen::create(
+            'Azimuth $ Panoramic Sector 3',
+            $photoForm->getAzimuthSectorC()
+        ));
+
+        $files->add(Dokumen::create(
+            'Connection Of CPRI Cable to RRU Sec 1',
+            $photoForm->getConnectionOfCpriSectorA()
+        ));
+
+        $files->add(Dokumen::create(
+            'Connection Of CPRI Cable to RRU Sec 2',
+            $photoForm->getConnectionOfCpriSectorB()
+        ));
+
+        $files->add(Dokumen::create(
+            'Connection Of CPRI Cable to RRU SEC 3',
+            $photoForm->getConnectionOfCpriSectorC()
+        ));
+
+        
     }
 
     /**

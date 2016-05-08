@@ -55,7 +55,7 @@
                                                         <td>{{ list.createdAt|date('d M Y') }}</td>
                                                         {% if (app.session.get('role')['value'] == 0) %}
                                                             <td>
-                                                                <a href="/delete/{{ list.id }}" title="Delete Account">
+                                                                <a href="/deleteUser/{{ list.id }}" title="Delete Account">
                                                                     <i class="imoon imoon-remove" style="color: #EC6F5A"></i>
                                                                 </a>
                                                                 &nbsp;

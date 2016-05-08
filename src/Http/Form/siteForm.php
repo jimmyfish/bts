@@ -25,6 +25,8 @@ class siteForm extends AbstractType
 
     private $siteName;
 
+    private $towerId;
+
     private $towerOwner;
 
     private $address;
@@ -96,6 +98,15 @@ class siteForm extends AbstractType
                 'label_attr'=> ['class'=>'field-label']
             ]
         )->add(
+            'tower_id',
+            'integer',
+            [
+                'constraints' => new Assert\NotBlank(),
+                'label' => false,
+                'attr' => ['class'=>'form-control','placeholder'=>'Input Tower Id (ex:B341)','required'=>'required'],
+                'label_attr' => ['class'=>'field-label']
+            ]
+        )->add(
             'tower_owner',
             'text',
             [
@@ -135,7 +146,7 @@ class siteForm extends AbstractType
             ]
         )->add(
             'longitude',
-            'integer',
+            'number',
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
@@ -145,7 +156,7 @@ class siteForm extends AbstractType
 
         )->add(
             'latitude',
-            'integer',
+            'number',
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
@@ -256,6 +267,16 @@ class siteForm extends AbstractType
     public function setSiteName($siteName)
     {
         $this->siteName = $siteName;
+    }
+
+    public function getTowerId()
+    {
+        return $this->towerId;
+    }
+
+    public function setTowerId($towerId)
+    {
+        $this->towerId = $towerId;
     }
 
     public function getTowerOwner()

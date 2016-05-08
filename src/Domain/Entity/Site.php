@@ -55,6 +55,12 @@ class Site
     public $siteName;
 
     /**
+     * @Column(type="integer",name="tower_id",nullable=false)
+     * @var int
+     */
+    public $towerId;
+
+    /**
      * @Column(type="string",name="tower_owner",length=255,nullable=false)
      * @var string
      */
@@ -114,7 +120,7 @@ class Site
      */
     public $spv;
 
-    public static function create($regional,$poc,$prodef,$siteId,$siteName,$towerOwner,$address,$fop,$spv,$longitude,$latitude,$existingSystem,$remark,$stats,$subcont)
+    public static function create($regional,$poc,$prodef,$siteId,$siteName,$towerId,$towerOwner,$address,$fop,$spv,$longitude,$latitude,$existingSystem,$remark,$stats,$subcont)
     {
         $siteInfo = new Site();
         $siteInfo->setRegional($regional);
@@ -122,6 +128,7 @@ class Site
         $siteInfo->setProdef($prodef);
         $siteInfo->setSiteId($siteId);
         $siteInfo->setSiteName($siteName);
+        $siteInfo->setTowerId($towerId);
         $siteInfo->setTowerOwner($towerOwner);
         $siteInfo->setAddress($address);
         $siteInfo->setFop($fop);
@@ -194,6 +201,16 @@ class Site
     public function setSiteName($siteName)
     {
         $this->siteName = $siteName;
+    }
+
+    public function getTowerId()
+    {
+        return $this->towerId;
+    }
+
+    public function setTowerId($towerId)
+    {
+        $this->towerId = $towerId;
     }
 
     public function getTowerOwner()

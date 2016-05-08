@@ -4,14 +4,14 @@
 
     {#{{ dump(infoSite) }}#}
     {{ form_start(form, {'method':'post','action': 'siteSelect'}) }}
-    {#<select>#}
-{#{% for info in infoSite %}#}
-    {#&#123;&#35;{{ info.siteId }}&#35;&#125;#}
+    <select>
+{% for info in infoSite %}
+    {#{{ info.siteId }}#}
 
-        {#<option value="{{ info.siteId }}">{{ info.siteName }}</option>#}
+        <option value="{{ info.siteId }}">{{ info.siteName }}</option>
 
-{#{% endfor %}#}
-{#</select>#}
+{% endfor %}
+</select>
     {{ form_widget(form) }}
     {{ form_end(form) }}
 {% endblock %}

@@ -229,6 +229,7 @@ class AppController implements ControllerProviderInterface
         $loginForm = new LoginForm();
 
         $formBuilder = $this->app['form.factory']->create($loginForm, $loginForm);
+//        var_dump($formBuilder);
 
         if ($request->getMethod() === 'GET') {
             return $this->app['twig']->render('login.twig', ['form' => $formBuilder->createView()]);
@@ -254,6 +255,16 @@ class AppController implements ControllerProviderInterface
             $this->app['session']->getFlashBag()->add(
                 'message_error',
                 'Incorrect Username or Password given'
+            );
+
+            return $this->app['twig']->render('login.twig', ['form' => $formBuilder->createView()]);
+        }
+        $role = $request->get('role');
+
+        if(!($user->getRole() == $role)){
+            $this->app['session']->getFlashBag()->add(
+                'message_error',
+                'Role Salah'
             );
             return $this->app['twig']->render('login.twig', ['form' => $formBuilder->createView()]);
         }
@@ -551,13 +562,27 @@ class AppController implements ControllerProviderInterface
         
     }
 
+    public function jsonJawabanAction(Request $request)
+    {
+
+        $jawaban = $this->app['jawaban.repository']->findAll();
+
+        if($request->getMethod() === 'GET')
+        {
+            return $this->app->json($jawaban);
+        }
+    }
+
     /**
      * Engineer Installation Form 2.1.1 (Indoor)
      * @return mixed
      */
     public function installationChecklistAction()
     {
-        return $this->app['twig']->render('Engineer/installationChecklistForm.twig');
+        $form = [];
+        return $this->app['twig']->render('Engineer/installationChecklistForm.twig',[
+            'form' => $form
+        ]);
     }
 
     /**

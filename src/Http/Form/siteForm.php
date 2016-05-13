@@ -8,6 +8,7 @@
 
 namespace Yanna\bts\Http\Form;
 
+use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\AbstractType;
@@ -51,12 +52,18 @@ class siteForm extends AbstractType
     {
         $builder->add(
             'regional',
-            'text',
+            'choice',
             [
                 'constraints'=>new Assert\NotBlank(),
-                'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input Regional (ex:LOMBOK)','required'=>'required'],
-                'label_attr'=> ['class'=>'field-label']
+                'choice_list' => new ChoiceList(
+                    ['0','1','2'],['Bali','Lombok','Jawa']
+                ),
+                'placeholder'=> 'choose Regional',
+                'empty_data' => '0',
+                'label'=>false,
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ]
         )->add(
             'poc',
@@ -64,7 +71,7 @@ class siteForm extends AbstractType
             [
                 'constraints'=>new Assert\NotBlank(),
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input poc (ex:MATARAM)','required'=>'required'],
+                'attr' => ['class'=>'form-control','placeholder'=>'Input Cluster (ex:MATARAM)','required'=>'required'],
                 'label_attr'=> ['class'=>'field-label']
             ]
 
@@ -106,15 +113,15 @@ class siteForm extends AbstractType
                 'attr' => ['class'=>'form-control','placeholder'=>'Input Tower Id (ex:B341)','required'=>'required'],
                 'label_attr' => ['class'=>'field-label']
             ]
-        )->add(
-            'tower_owner',
-            'text',
-            [
-                'constraints'=>new Assert\NotBlank(),
-                'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input tower owner (ex:XL)','required'=>'required'],
-                'label_attr'=> ['class'=>'field-label']
-            ]
+//        )->add(
+//            'tower_owner',
+//            'text',
+//            [
+//                'constraints'=>new Assert\NotBlank(),
+//                'label' => false,
+//                'attr' => ['class'=>'form-control','placeholder'=>'Input tower owner (ex:XL)','required'=>'required'],
+//                'label_attr'=> ['class'=>'field-label']
+//            ]
         )->add(
             'address',
             'text',
@@ -127,23 +134,29 @@ class siteForm extends AbstractType
 
         )->add(
             'fop',
-            'text',
+            'choice',
             [
                 'constraints'=>new Assert\NotBlank(),
+                'choice_list' => new ChoiceList(
+                    ['0','1','2','3','4'],['NURUL AMINULLAH (+6281933155295)','M MAISUN (+6281915940909)','JAKA SUTARJA (+6281806751538)','HERRY SETYAWAN PUTRA (+62817369001)','GREGORIUS ERSON KOE (+628175738260)']
+                ),
+                'placeholder' => 'choose Fop',
+                'empty_data' => '0',
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input fop (ex:NURUL AMINULLAH (+6281933155295))','required'=>'required'],
-                'label_attr'=> ['class'=>'field-label']
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ]
-
-        )->add(
-            'spv',
-            'text',
-            [
-                'constraints'=>new Assert\NotBlank(),
-                'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input spv (ex:LOMBOK 2)','required'=>'required'],
-                'label_attr'=> ['class'=>'field-label']
-            ]
+//
+//        )->add(
+//            'spv',
+//            'text',
+//            [
+//                'constraints'=>new Assert\NotBlank(),
+//                'label' => false,
+//                'attr' => ['class'=>'form-control','placeholder'=>'Input spv (ex:LOMBOK 2)','required'=>'required'],
+//                'label_attr'=> ['class'=>'field-label']
+//            ]
         )->add(
             'longitude',
             'number',
@@ -186,23 +199,29 @@ class siteForm extends AbstractType
 
         )->add(
             'stats',
-            'text',
+            'choice',
             [
                 'constraints'=>new Assert\NotBlank(),
+                'choice_list'=> new ChoiceList(
+                    ['0','1','2'],['Indoor','Outdoor','Outdoor(Enclosure)']
+                ),
+                'placeholder' => 'Choose Status',
+                'empty_data' => '0',
                 'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input stats (ex:Indoor)','required'=>'required'],
-                'label_attr'=> ['class'=>'field-label']
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ]
 
-        )->add(
-            'subcont',
-            'text',
-            [
-                'constraints'=>new Assert\NotBlank(),
-                'label' => false,
-                'attr' => ['class'=>'form-control','placeholder'=>'Input subcont (ex:SELNET)','required'=>'required'],
-                'label_attr'=> ['class'=>'field-label']
-            ]
+//        )->add(
+//            'subcont',
+//            'text',
+//            [
+//                'constraints'=>new Assert\NotBlank(),
+//                'label' => false,
+//                'attr' => ['class'=>'form-control','placeholder'=>'Input subcont (ex:SELNET)','required'=>'required'],
+//                'label_attr'=> ['class'=>'field-label']
+//            ]
 
         )->add(
             'kirim',

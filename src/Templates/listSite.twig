@@ -33,21 +33,21 @@
                                         <tr>
                                             <th>No.</th>
                                             <th>Region</th>
-                                            <th>Poc</th>
+                                            <th>Cluster</th>
                                             <th>Prodef</th>
                                             <th>site_id</th>
                                             <th>site_name</th>
                                             <th>Tower_id</th>
-                                            <th>Tower_owner</th>
+                                            {#<th>Tower_owner</th>#}
                                             <th>Address</th>
                                             <th>Fop</th>
-                                            <th>Spv</th>
+                                            {#<th>Spv</th>#}
                                             <th>Longitude</th>
                                             <th>Latitude</th>
                                             <th>Existing_System</th>
                                             <th>Remark</th>
-                                            <th>Stats</th>
-                                            <th>Subcont</th>
+                                            <th>Status</th>
+                                            {#<th>Subcont</th>#}
 
 
                                             {% if ((app.session.get('role')['value']) == 0) %}
@@ -63,22 +63,44 @@
 
                                             <tr>
                                                 <td>{{ i }}</td>
-                                                <td>{{ list.regional }}</td>
+                                                {% if (list.regional == 0) %}
+                                                <td>Bali</td>
+                                                {% elseif (list.regional == 1) %}
+                                                <td>Lombok</td>
+                                                {% else %}
+                                                <td>Jawa</td>
+                                                {% endif %}
                                                 <td>{{ list.poc }}</td>
                                                 <td>{{ list.prodef }}</td>
                                                 <td>{{ list.siteId }}</td>
                                                 <td>{{ list.siteName }}</td>
                                                 <td>{{ list.towerId }}</td>
-                                                <td>{{ list.towerOwner }}</td>
+                                                {#<td>{{ list.towerOwner }}</td>#}
                                                 <td>{{ list.address }}</td>
-                                                <td>{{ list.fop }}</td>
-                                                <td>{{ list.spv }}</td>
+                                                {% if (list.fop == 0) %}
+                                                <td>NURUL AMINULLAH (+6281933155295)</td>
+                                                {% elseif (list.fop == 1) %}
+                                                <td>M MAISUN (+6281915940909</td>
+                                                {% elseif (list.fop == 2) %}
+                                                <td>JAKA SUTARJA (+6281806751538)</td>
+                                                {% elseif (list.fop == 3) %}
+                                                <td>HERRY SETYAWAN PUTRA (+62817369001)</td>
+                                                {% else %}
+                                                <td>GREGORIUS ERSON KOE (+628175738260)</td>
+                                                {% endif %}
+                                                {#<td>{{ list.spv }}</td>#}
                                                 <td>{{ list.longitude }}</td>
                                                 <td>{{ list.latitude }}</td>
                                                 <td>{{ list.existingSystem }}</td>
                                                 <td>{{ list.remark }}</td>
-                                                <td>{{ list.stats }}</td>
-                                                <td>{{ list.subcont }}</td>
+                                                {% if (list.stats == 0) %}
+                                                <td>Indoor</td>
+                                                {% elseif (list.stats == 1) %}
+                                                <td>Outdoor</td>
+                                                {% else %}
+                                                <td>Outdoor(Enclosure)</td>
+                                                {% endif %}
+                                                {#<td>{{ list.subcont }}</td>#}
 
                                                 {% if (app.session.get('role')['value'] == 0) %}
                                                     <td>

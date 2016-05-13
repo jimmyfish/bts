@@ -156,6 +156,9 @@ class AppController implements ControllerProviderInterface
         $controller->match('/showJson',[$this,'showJsonAction'])
             ->bind('showJsonSite');
 
+        $controller->match('/upload',[$this,'photoAction'])
+            ->bind('uploadFile');
+
         return $controller;
     }
 
@@ -364,14 +367,14 @@ class AppController implements ControllerProviderInterface
             return $this->app['twig']->render('newSite.twig', ['form' => $formBuilder->createView()]);
         }
 
-        $dataSite = Site::create($newSiteForm->getRegional(),$newSiteForm->getPoc(),$newSiteForm->getProdef(),$newSiteForm->getSiteId(),$newSiteForm->getSiteName(),$newSiteForm->getTowerId(),$newSiteForm->getTowerOwner(),$newSiteForm->getAddress(),$newSiteForm->getFop(),$newSiteForm->getSpv(),$newSiteForm->getLongitude(),$newSiteForm->getLatitude(),$newSiteForm->getExistingSystem(),$newSiteForm->getRemark(),$newSiteForm->getStats(),$newSiteForm->getSubcont());
+        $dataSite = Site::create($newSiteForm->getRegional(),$newSiteForm->getPoc(),$newSiteForm->getProdef(),$newSiteForm->getSiteId(),$newSiteForm->getSiteName(),$newSiteForm->getTowerId(),$newSiteForm->getAddress(),$newSiteForm->getFop(),$newSiteForm->getLongitude(),$newSiteForm->getLatitude(),$newSiteForm->getExistingSystem(),$newSiteForm->getRemark(),$newSiteForm->getStats());
 
         $this->app['orm.em']->persist($dataSite);
         $this->app['orm.em']->flush();
 
         $this->app['session']->getFlashBag()->add(
             'message_success',
-            'Account Created Successfully'
+            'Site Created Successfully'
         );
         return $this->app->redirect($this->app['url_generator']->generate('listSite'));
     }
@@ -419,146 +422,194 @@ class AppController implements ControllerProviderInterface
     public function photoAction(Request $request)
     {
         $photoForm = new photoForm();
-        $formBuilder = $this->app['form.repository']->create($photoForm,$photoForm);
+        $formBuilder = $this->app['form.factory']->create($photoForm,$photoForm);
 
         if($request->getMethod() === 'GET'){
-            return $this->app['twig']->render('photo.twig',['form'=>$formBuilder->createView()]);
+            return $this->app['twig']->render('upload.twig',['form'=>$formBuilder->createView()]);
         }
 
         $formBuilder->handleRequest($request);
 
         if(! $formBuilder->isValid())
         {
-            return $this->app['twig']->render('photo.twig',['form'=>$formBuilder->createView()]);
+            return $this->app['twig']->render('upload.twig',['form'=>$formBuilder->createView()]);
         }
 
         $files = new ArrayCollection();
 
+        $dokumen = Dokumen::create($files);
+
         $files->add(Dokumen::create(
             'Site Location',
-            $photoForm->getSiteLocation()
+            $photoForm->getSiteLocation(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'GPS Coordinate',
-            $photoForm->getGpsCoordinate()
+            $photoForm->getGpsCoordinate(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Shelter View',
-            $photoForm->getShelterView()
+            $photoForm->getShelterView(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Overview of inside the cabinet',
-            $photoForm->getOverviewInside()
+            $photoForm->getOverviewInside(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
            'FEP Indoor View',
-            $photoForm->getFepIndoor()
+            $photoForm->getFepIndoor(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
            'FEP Outdoor View',
-            $photoForm->getFepOutdoor()
+            $photoForm->getFepOutdoor(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Feeder Indoor Installation',
-            $photoForm->getFeederIndoor()
+            $photoForm->getFeederIndoor(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Feeder Bending',
-            $photoForm->getFeederBreeding()
+            $photoForm->getFeederBreeding(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Internal Grounding Bar (IGB)',
-            $photoForm->getInternalGrounding()
+            $photoForm->getInternalGrounding(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'External GB at Shelter',
-            $photoForm->getExternalGb()
+            $photoForm->getExternalGb(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Alarm Box',
-            $photoForm->getAlarmBox()
+            $photoForm->getAlarmBox(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'ACPDB Internal View',
-            $photoForm->getAcpdbInternal()
+            $photoForm->getAcpdbInternal(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'MCB at DCPDB',
-            $photoForm->getMcbAt()
+            $photoForm->getMcbAt(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Rectifier Cabinet',
-            $photoForm->getRectifierCabinet()
+            $photoForm->getRectifierCabinet(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'MCB at Rectifier Cabinet',
-            $photoForm->getMcbAtRectifier()
+            $photoForm->getMcbAtRectifier(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Rack 19',
-            $photoForm->getRack()
+            $photoForm->getRack(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Antenna Mechanical Electrical Tilting Sector 1',
-            $photoForm->getAntennaMechanicalSectorA()
+            $photoForm->getAntennaMechanicalSectorA(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Antenna Mechanical Electrical Tilting Sector 2',
-            $photoForm->getAntennaMechanicalSectorB()
+            $photoForm->getAntennaMechanicalSectorB(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Antenna Mechanical Electrical Tilting Sector 3',
-            $photoForm->getAntennaMechanicalSectorC()
+            $photoForm->getAntennaMechanicalSectorC(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Azimuth & Panoramic Sector 1',
-            $photoForm->getAzimuthSectorA()
+            $photoForm->getAzimuthSectorA(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Azimuth & Panoramic Sector 2',
-            $photoForm->getAzimuthSectorB()
+            $photoForm->getAzimuthSectorB(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Azimuth $ Panoramic Sector 3',
-            $photoForm->getAzimuthSectorC()
+            $photoForm->getAzimuthSectorC(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Connection Of CPRI Cable to RRU Sec 1',
-            $photoForm->getConnectionOfCpriSectorA()
+            $photoForm->getConnectionOfCpriSectorA(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Connection Of CPRI Cable to RRU Sec 2',
-            $photoForm->getConnectionOfCpriSectorB()
+            $photoForm->getConnectionOfCpriSectorB(),
+            $dokumen
         ));
 
         $files->add(Dokumen::create(
             'Connection Of CPRI Cable to RRU SEC 3',
-            $photoForm->getConnectionOfCpriSectorC()
+            $photoForm->getConnectionOfCpriSectorC(),
+            $dokumen
         ));
 
+        $dokumen->setDokumen($files);
+
+        $this->app['orm.em']->persist($dokumen);
+        $this->app['orm.em']->flush();
+
+        $dirName =  $this->app['dokumen.path'] . '/' . $dokumen->getId();
+        mkdir($dirName,0755);
+
+        foreach ($files as $dokumen){
+            /**
+             * @var Dokumen $dokumen
+             */
+            $dokumen->getFile()->move($dirName,$dokumen->getFileName());
+        }
+
+        $this->app['session']->getFlashBag()->add(
+            'message_success',
+            'sukses upload file'
+        );
+
+        return $this->app['twig']->render('listPhoto.twig',['form' => $formBuilder->createView()]);
         
     }
 

@@ -14,137 +14,137 @@ use Symfony\Component\Validator\Constraints as Assert;
 class photoForm extends AbstractType {
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $siteLocation;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $gpsCoordinate;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $shelterView;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $overviewInside;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $fepIndoor;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $fepOutdoor;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $feederIndoor;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $feederBreeding;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $internalGrounding;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $externalGb;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $alarmBox;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $acpdbInternal;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $mcbAt;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $rectifierCabinet;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $mcbAtRectifier;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $rack;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $antennaMechanicalSectorA;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $antennaMechanicalSectorB;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $antenaMechanicalSectorC;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $azimuthSectorA;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $azimuthSectorB;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $azimuthSectorC;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $labellingOfCpri;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $connectionOfCpriSectorA;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $connectionOfCpriSectorB;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $connectionOfCpriSectorC;
 
     /**
-     * @var UploadedImage
+     * @var UploadedFile
      */
     private $groundingCable;
 
@@ -152,273 +152,273 @@ class photoForm extends AbstractType {
     {
         $builder->add(
             'siteLocation',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
-                    new Assert\image([
+                    new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class' => 'form-control','required'=>'required']
             ]
         )->add(
             'gpsCoordinate',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
-                    new Assert\image([
+                    new Assert\Image([
                       'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'shelterView',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
-                    new Assert\image([
+                    new Assert\Image([
                       'maxSize' => '10m',
-                      'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'overviewInside',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
-                    new Assert\image([
+                    new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class' => 'form-control','required' => 'required']
             ]
         )->add(
             'fepIndoor',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
-                    new Assert\image([
+                    new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class' => 'form-control','required' => 'required']
             ]
         )->add(
             'fepOutdoor',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
-                    new Assert\image([
+                    new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'feederIndoor',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
-                    new Assert\image([
+                    new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'feederBreeding',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
-                    new Assert\image([
+                    new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required' => 'required']
             ]
         )->add(
             'internalGrounding',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class' => 'form-control','required'=>'required']
             ]
         )->add(
             'externalGb',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class' => 'form-control','required'=>'required']
             ]
         )->add(
             'alarmBox',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr'=>['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'acpdbInternal',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'mcbAt',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'rectifierCabinet',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'mcbAtRectifier',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'rack',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes'=>['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'antennaMechanicalSectorA',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'antennaMechanicalSectorB',
-            'image',
+            'file',
             [
                 'constraints'=>[
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'antennaMechanicalSectorC',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'azimuthSectorA',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class' => 'form-control','required'=>'required']
             ]
         )->add(
             'azimuthSectorB',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
@@ -426,78 +426,78 @@ class photoForm extends AbstractType {
 
         )->add(
             'azimuthSectorC',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'labellingOfCpri',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'connectionOfCpriSectorA',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'connectionOfCpriSectorB',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'connectionOFCpriSectorC',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
-                'atrr' => ['class'=>'form-control','required'=>'required']
+                'attr' => ['class'=>'form-control','required'=>'required']
             ]
         )->add(
             'groundingCable',
-            'image',
+            'file',
             [
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Image([
                         'maxSize' => '10m',
-                        'mimeTypes' => ['image/jpg','image/jpeg','image/png'],
+
                     ])
                 ],
                 'attr' => ['class'=>'form-control','required'=>'required']

@@ -25,8 +25,9 @@ class Site
     public $id;
 
     /**
-     * @Column(type="string",length=255,nullable=false)
-     * @var string
+     * @Column(type="integer",nullable=false)
+     * @var int
+     *
      */
     public $regional;
 
@@ -60,11 +61,6 @@ class Site
      */
     public $towerId;
 
-    /**
-     * @Column(type="string",name="tower_owner",length=255,nullable=false)
-     * @var string
-     */
-    public $towerOwner;
 
     /**
      * @Column(type="string",length=255,nullable=false)
@@ -73,8 +69,8 @@ class Site
     public $address;
 
     /**
-     * @Column(type="string",length=255,nullable=false)
-     * @var string
+     * @Column(type="integer",nullable=false)
+     * @var int
      */
     public $fop;
 
@@ -108,19 +104,10 @@ class Site
      */
     public $stats;
 
-    /**
-     * @Column(type="string",length=255,nullable=false)
-     * @var string
-     */
-    public $subcont;
 
-    /**
-     * @Column(type="string", length=255, nullable=false)
-     * @var string
-     */
-    public $spv;
 
-    public static function create($regional,$poc,$prodef,$siteId,$siteName,$towerId,$towerOwner,$address,$fop,$spv,$longitude,$latitude,$existingSystem,$remark,$stats,$subcont)
+
+    public static function create($regional,$poc,$prodef,$siteId,$siteName,$towerId,$address,$fop,$longitude,$latitude,$existingSystem,$remark,$stats)
     {
         $siteInfo = new Site();
         $siteInfo->setRegional($regional);
@@ -129,16 +116,14 @@ class Site
         $siteInfo->setSiteId($siteId);
         $siteInfo->setSiteName($siteName);
         $siteInfo->setTowerId($towerId);
-        $siteInfo->setTowerOwner($towerOwner);
         $siteInfo->setAddress($address);
         $siteInfo->setFop($fop);
-        $siteInfo->setSpv($spv);
         $siteInfo->setLongitude($longitude);
         $siteInfo->setLatitude($latitude);
         $siteInfo->setExistingSystem($existingSystem);
         $siteInfo->setRemark($remark);
         $siteInfo->setStats($stats);
-        $siteInfo->setsubcont($subcont);
+
 
         return $siteInfo;
     }
@@ -213,15 +198,6 @@ class Site
         $this->towerId = $towerId;
     }
 
-    public function getTowerOwner()
-    {
-        return $this->towerOwner;
-    }
-
-    public function setTowerOwner($towerOwner)
-    {
-        $this->towerOwner = $towerOwner;
-    }
 
     public function getAddress()
     {
@@ -293,25 +269,8 @@ class Site
         $this->stats = $stats;
     }
 
-    public function getSubcont()
-    {
-        return $this->subcont;
-    }
 
-    public function setSubcont($subcont)
-    {
-        $this->subcont = $subcont;
-    }
 
-    public function getSpv()
-    {
-        return $this->spv;
-    }
-
-    public function setSpv($spv)
-    {
-        $this->spv = $spv;
-    }
 
 
 }
